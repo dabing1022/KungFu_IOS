@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>90A4EE78-AEB3-4B30-83AC-C2F083067C1B</string>
+	<key>IDESourceControlProjectName</key>
+	<string>KungFu_IOS</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>8B007404E6A40F7D25D3B044312A7001206BC068</key>
+		<string>https://github.com/dabing1022/KungFu_IOS.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>KungFu_IOS.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>8B007404E6A40F7D25D3B044312A7001206BC068</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/dabing1022/KungFu_IOS.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>8B007404E6A40F7D25D3B044312A7001206BC068</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>8B007404E6A40F7D25D3B044312A7001206BC068</string>
+			<key>IDESourceControlWCCName</key>
+			<string>KungFu_IOS</string>
+		</dict>
+	</array>
+</dict>
+</plist>

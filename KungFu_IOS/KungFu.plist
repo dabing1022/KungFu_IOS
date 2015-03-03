@@ -6,6 +6,24 @@
 	<array>
 		<dict>
 			<key>title</key>
+			<string>CAShapeLayer</string>
+			<key>viewControllerName</key>
+			<string>CAShapeLayerTestViewController</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>SimpleClock</string>
+			<key>viewControllerName</key>
+			<string>SimpleClockViewController</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>ContentTest</string>
+			<key>viewControllerName</key>
+			<string>ContentTestViewController</string>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>Quartz-text</string>
 			<key>viewName</key>
 			<string>CATravelView</string>

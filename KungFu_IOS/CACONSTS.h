@@ -6,8 +6,8 @@
 //  Copyright (c) 2015年 ChildhoodAndy. All rights reserved.
 //
 
-#ifndef TextTravel_CACONSTS_h
-#define TextTravel_CACONSTS_h
+#ifndef CACONSTS_h
+#define CACONSTS_h
 
 #define kScreen_Height                      ([UIScreen mainScreen].bounds.size.height)
 #define kScreen_Width                       ([UIScreen mainScreen].bounds.size.width)

@@ -1,0 +1,14 @@
+//
+//  KungFu_IOS.pch
+//  KungFu_IOS
+//
+//  Created by ChildhoodAndy on 15/2/15.
+//  Copyright (c) 2015年 ChildhoodAndy. All rights reserved.
+//
+
+#ifndef KungFu_IOS_KungFu_IOS_pch
+#define KungFu_IOS_KungFu_IOS_pch
+
+#import "CACONSTS.h"
+
+#endif

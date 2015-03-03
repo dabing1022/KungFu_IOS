@@ -7,6 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		891E172D1A90515E009B7F9F /* ClockFace.png in Resources */ = {isa = PBXBuildFile; fileRef = 891E17251A90515E009B7F9F /* ClockFace.png */; };
+		891E172E1A90515E009B7F9F /* ClockFace@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 891E17261A90515E009B7F9F /* ClockFace@2x.png */; };
+		891E172F1A90515E009B7F9F /* HourHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 891E17271A90515E009B7F9F /* HourHand.png */; };
+		891E17301A90515E009B7F9F /* HourHand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 891E17281A90515E009B7F9F /* HourHand@2x.png */; };
+		891E17311A90515E009B7F9F /* MinuteHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 891E17291A90515E009B7F9F /* MinuteHand.png */; };
+		891E17321A90515E009B7F9F /* MinuteHand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 891E172A1A90515E009B7F9F /* MinuteHand@2x.png */; };
+		891E17331A90515E009B7F9F /* SecondHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 891E172B1A90515E009B7F9F /* SecondHand.png */; };
+		891E17341A90515E009B7F9F /* SecondHand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 891E172C1A90515E009B7F9F /* SecondHand@2x.png */; };
+		891E17371A9051B5009B7F9F /* SimpleClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891E17361A9051B5009B7F9F /* SimpleClockViewController.m */; };
+		891E173B1A948730009B7F9F /* CAShapeLayerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891E173A1A948730009B7F9F /* CAShapeLayerTestViewController.m */; };
+		89B1F5211A9030BC00965B8E /* ContentTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B1F5201A9030BC00965B8E /* ContentTestViewController.m */; };
+		89B1F5261A90364100965B8E /* Snowman.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B1F5241A90364100965B8E /* Snowman.png */; };
+		89B1F5271A90364100965B8E /* Snowman@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B1F5251A90364100965B8E /* Snowman@2x.png */; };
 		89E6EDE71A88A7A10084F8ED /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E6EDE61A88A7A10084F8ED /* main.m */; };
 		89E6EDEA1A88A7A10084F8ED /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E6EDE91A88A7A10084F8ED /* AppDelegate.m */; };
 		89E6EDED1A88A7A10084F8ED /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E6EDEC1A88A7A10084F8ED /* ViewController.m */; };
@@ -32,6 +45,23 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		891E17251A90515E009B7F9F /* ClockFace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClockFace.png; sourceTree = "<group>"; };
+		891E17261A90515E009B7F9F /* ClockFace@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ClockFace@2x.png"; sourceTree = "<group>"; };
+		891E17271A90515E009B7F9F /* HourHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HourHand.png; sourceTree = "<group>"; };
+		891E17281A90515E009B7F9F /* HourHand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "HourHand@2x.png"; sourceTree = "<group>"; };
+		891E17291A90515E009B7F9F /* MinuteHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MinuteHand.png; sourceTree = "<group>"; };
+		891E172A1A90515E009B7F9F /* MinuteHand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "MinuteHand@2x.png"; sourceTree = "<group>"; };
+		891E172B1A90515E009B7F9F /* SecondHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SecondHand.png; sourceTree = "<group>"; };
+		891E172C1A90515E009B7F9F /* SecondHand@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "SecondHand@2x.png"; sourceTree = "<group>"; };
+		891E17351A9051B5009B7F9F /* SimpleClockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleClockViewController.h; sourceTree = "<group>"; };
+		891E17361A9051B5009B7F9F /* SimpleClockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleClockViewController.m; sourceTree = "<group>"; };
+		891E17381A9052A3009B7F9F /* KungFu_IOS.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KungFu_IOS.pch; sourceTree = "<group>"; };
+		891E17391A948730009B7F9F /* CAShapeLayerTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAShapeLayerTestViewController.h; sourceTree = "<group>"; };
+		891E173A1A948730009B7F9F /* CAShapeLayerTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAShapeLayerTestViewController.m; sourceTree = "<group>"; };
+		89B1F51F1A9030BC00965B8E /* ContentTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentTestViewController.h; sourceTree = "<group>"; };
+		89B1F5201A9030BC00965B8E /* ContentTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentTestViewController.m; sourceTree = "<group>"; };
+		89B1F5241A90364100965B8E /* Snowman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snowman.png; sourceTree = "<group>"; };
+		89B1F5251A90364100965B8E /* Snowman@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Snowman@2x.png"; sourceTree = "<group>"; };
 		89E6EDE11A88A7A10084F8ED /* KungFu_IOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KungFu_IOS.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		89E6EDE51A88A7A10084F8ED /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		89E6EDE61A88A7A10084F8ED /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -73,6 +103,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		89B1F51E1A90303500965B8E /* CoreAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				89B1F51F1A9030BC00965B8E /* ContentTestViewController.h */,
+				89B1F5201A9030BC00965B8E /* ContentTestViewController.m */,
+				891E17351A9051B5009B7F9F /* SimpleClockViewController.h */,
+				891E17361A9051B5009B7F9F /* SimpleClockViewController.m */,
+				891E17391A948730009B7F9F /* CAShapeLayerTestViewController.h */,
+				891E173A1A948730009B7F9F /* CAShapeLayerTestViewController.m */,
+			);
+			path = CoreAnimation;
+			sourceTree = "<group>";
+		};
 		89E6EDD81A88A7A00084F8ED = {
 			isa = PBXGroup;
 			children = (
@@ -99,6 +142,7 @@
 				89E6EDE91A88A7A10084F8ED /* AppDelegate.m */,
 				89E6EDEB1A88A7A10084F8ED /* ViewController.h */,
 				89E6EDEC1A88A7A10084F8ED /* ViewController.m */,
+				89B1F51E1A90303500965B8E /* CoreAnimation */,
 				89E6EE151A88AE0E0084F8ED /* Quartz */,
 				89E6EE0C1A88AB980084F8ED /* Dandelion */,
 				89E6EDEE1A88A7A10084F8ED /* Main.storyboard */,
@@ -116,6 +160,7 @@
 			children = (
 				89E6EDE51A88A7A10084F8ED /* Info.plist */,
 				89E6EDE61A88A7A10084F8ED /* main.m */,
+				891E17381A9052A3009B7F9F /* KungFu_IOS.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -149,6 +194,16 @@
 		89E6EE101A88ABE40084F8ED /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				891E17251A90515E009B7F9F /* ClockFace.png */,
+				891E17261A90515E009B7F9F /* ClockFace@2x.png */,
+				891E17271A90515E009B7F9F /* HourHand.png */,
+				891E17281A90515E009B7F9F /* HourHand@2x.png */,
+				891E17291A90515E009B7F9F /* MinuteHand.png */,
+				891E172A1A90515E009B7F9F /* MinuteHand@2x.png */,
+				891E172B1A90515E009B7F9F /* SecondHand.png */,
+				891E172C1A90515E009B7F9F /* SecondHand@2x.png */,
+				89B1F5241A90364100965B8E /* Snowman.png */,
+				89B1F5251A90364100965B8E /* Snowman@2x.png */,
 				89E6EE111A88ABE40084F8ED /* particleTexture@2x.png */,
 				89E6EE121A88ABE40084F8ED /* point@2x.png */,
 			);
@@ -245,9 +300,19 @@
 			buildActionMask = 2147483647;
 			files = (
 				89E6EDF01A88A7A10084F8ED /* Main.storyboard in Resources */,
+				89B1F5261A90364100965B8E /* Snowman.png in Resources */,
+				891E172E1A90515E009B7F9F /* ClockFace@2x.png in Resources */,
+				89B1F5271A90364100965B8E /* Snowman@2x.png in Resources */,
+				891E17311A90515E009B7F9F /* MinuteHand.png in Resources */,
+				891E17341A90515E009B7F9F /* SecondHand@2x.png in Resources */,
+				891E17331A90515E009B7F9F /* SecondHand.png in Resources */,
+				891E17321A90515E009B7F9F /* MinuteHand@2x.png in Resources */,
 				89E6EE131A88ABE40084F8ED /* particleTexture@2x.png in Resources */,
+				891E17301A90515E009B7F9F /* HourHand@2x.png in Resources */,
 				89E6EDF51A88A7A10084F8ED /* LaunchScreen.xib in Resources */,
 				89E6EE141A88ABE40084F8ED /* point@2x.png in Resources */,
+				891E172D1A90515E009B7F9F /* ClockFace.png in Resources */,
+				891E172F1A90515E009B7F9F /* HourHand.png in Resources */,
 				89E6EE0B1A88A8940084F8ED /* KungFu.plist in Resources */,
 				89E6EDF21A88A7A10084F8ED /* Images.xcassets in Resources */,
 			);
@@ -267,9 +332,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				891E173B1A948730009B7F9F /* CAShapeLayerTestViewController.m in Sources */,
 				89E6EDED1A88A7A10084F8ED /* ViewController.m in Sources */,
 				89E6EE0F1A88ABC20084F8ED /* DandelionViewController.m in Sources */,
+				89B1F5211A9030BC00965B8E /* ContentTestViewController.m in Sources */,
 				89E6EDEA1A88A7A10084F8ED /* AppDelegate.m in Sources */,
+				891E17371A9051B5009B7F9F /* SimpleClockViewController.m in Sources */,
 				89E6EE181A88AE3C0084F8ED /* CATravelView.m in Sources */,
 				89E6EDE71A88A7A10084F8ED /* main.m in Sources */,
 			);
@@ -395,6 +463,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = KungFu_IOS/KungFu_IOS.pch;
 				INFOPLIST_FILE = KungFu_IOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -405,6 +475,8 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = KungFu_IOS/KungFu_IOS.pch;
 				INFOPLIST_FILE = KungFu_IOS/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -464,6 +536,7 @@
 				89E6EE061A88A7A10084F8ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		89E6EE071A88A7A10084F8ED /* Build configuration list for PBXNativeTarget "KungFu_IOSTests" */ = {
 			isa = XCConfigurationList;
@@ -472,6 +545,7 @@
 				89E6EE091A88A7A10084F8ED /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
