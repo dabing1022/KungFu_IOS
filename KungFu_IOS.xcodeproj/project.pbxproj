@@ -17,6 +17,9 @@
 		891E17341A90515E009B7F9F /* SecondHand@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 891E172C1A90515E009B7F9F /* SecondHand@2x.png */; };
 		891E17371A9051B5009B7F9F /* SimpleClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891E17361A9051B5009B7F9F /* SimpleClockViewController.m */; };
 		891E173B1A948730009B7F9F /* CAShapeLayerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891E173A1A948730009B7F9F /* CAShapeLayerTestViewController.m */; };
+		891E17411AA6B035009B7F9F /* CATextLayerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891E17401AA6B035009B7F9F /* CATextLayerTestViewController.m */; };
+		891E17461AA6B063009B7F9F /* PerlinNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 891E17451AA6B063009B7F9F /* PerlinNoise.m */; };
+		891E174A1AA6B0AC009B7F9F /* PerlinNoiseTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891E17491AA6B0AC009B7F9F /* PerlinNoiseTestViewController.m */; };
 		89B1F5211A9030BC00965B8E /* ContentTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B1F5201A9030BC00965B8E /* ContentTestViewController.m */; };
 		89B1F5261A90364100965B8E /* Snowman.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B1F5241A90364100965B8E /* Snowman.png */; };
 		89B1F5271A90364100965B8E /* Snowman@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B1F5251A90364100965B8E /* Snowman@2x.png */; };
@@ -58,6 +61,12 @@
 		891E17381A9052A3009B7F9F /* KungFu_IOS.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KungFu_IOS.pch; sourceTree = "<group>"; };
 		891E17391A948730009B7F9F /* CAShapeLayerTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAShapeLayerTestViewController.h; sourceTree = "<group>"; };
 		891E173A1A948730009B7F9F /* CAShapeLayerTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAShapeLayerTestViewController.m; sourceTree = "<group>"; };
+		891E173F1AA6B035009B7F9F /* CATextLayerTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATextLayerTestViewController.h; sourceTree = "<group>"; };
+		891E17401AA6B035009B7F9F /* CATextLayerTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATextLayerTestViewController.m; sourceTree = "<group>"; };
+		891E17441AA6B063009B7F9F /* PerlinNoise.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerlinNoise.h; sourceTree = "<group>"; };
+		891E17451AA6B063009B7F9F /* PerlinNoise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerlinNoise.m; sourceTree = "<group>"; };
+		891E17481AA6B0AC009B7F9F /* PerlinNoiseTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerlinNoiseTestViewController.h; sourceTree = "<group>"; };
+		891E17491AA6B0AC009B7F9F /* PerlinNoiseTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerlinNoiseTestViewController.m; sourceTree = "<group>"; };
 		89B1F51F1A9030BC00965B8E /* ContentTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentTestViewController.h; sourceTree = "<group>"; };
 		89B1F5201A9030BC00965B8E /* ContentTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentTestViewController.m; sourceTree = "<group>"; };
 		89B1F5241A90364100965B8E /* Snowman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snowman.png; sourceTree = "<group>"; };
@@ -103,6 +112,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		891E17421AA6B063009B7F9F /* ThirdParty */ = {
+			isa = PBXGroup;
+			children = (
+				891E17431AA6B063009B7F9F /* PerlinNoise */,
+			);
+			path = ThirdParty;
+			sourceTree = "<group>";
+		};
+		891E17431AA6B063009B7F9F /* PerlinNoise */ = {
+			isa = PBXGroup;
+			children = (
+				891E17441AA6B063009B7F9F /* PerlinNoise.h */,
+				891E17451AA6B063009B7F9F /* PerlinNoise.m */,
+			);
+			path = PerlinNoise;
+			sourceTree = "<group>";
+		};
+		891E17471AA6B096009B7F9F /* PerlinNoise */ = {
+			isa = PBXGroup;
+			children = (
+				891E17481AA6B0AC009B7F9F /* PerlinNoiseTestViewController.h */,
+				891E17491AA6B0AC009B7F9F /* PerlinNoiseTestViewController.m */,
+			);
+			path = PerlinNoise;
+			sourceTree = "<group>";
+		};
 		89B1F51E1A90303500965B8E /* CoreAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +147,8 @@
 				891E17361A9051B5009B7F9F /* SimpleClockViewController.m */,
 				891E17391A948730009B7F9F /* CAShapeLayerTestViewController.h */,
 				891E173A1A948730009B7F9F /* CAShapeLayerTestViewController.m */,
+				891E173F1AA6B035009B7F9F /* CATextLayerTestViewController.h */,
+				891E17401AA6B035009B7F9F /* CATextLayerTestViewController.m */,
 			);
 			path = CoreAnimation;
 			sourceTree = "<group>";
@@ -142,9 +179,11 @@
 				89E6EDE91A88A7A10084F8ED /* AppDelegate.m */,
 				89E6EDEB1A88A7A10084F8ED /* ViewController.h */,
 				89E6EDEC1A88A7A10084F8ED /* ViewController.m */,
+				891E17471AA6B096009B7F9F /* PerlinNoise */,
 				89B1F51E1A90303500965B8E /* CoreAnimation */,
 				89E6EE151A88AE0E0084F8ED /* Quartz */,
 				89E6EE0C1A88AB980084F8ED /* Dandelion */,
+				891E17421AA6B063009B7F9F /* ThirdParty */,
 				89E6EDEE1A88A7A10084F8ED /* Main.storyboard */,
 				89E6EDF11A88A7A10084F8ED /* Images.xcassets */,
 				89E6EDF31A88A7A10084F8ED /* LaunchScreen.xib */,
@@ -332,8 +371,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				891E17411AA6B035009B7F9F /* CATextLayerTestViewController.m in Sources */,
 				891E173B1A948730009B7F9F /* CAShapeLayerTestViewController.m in Sources */,
+				891E17461AA6B063009B7F9F /* PerlinNoise.m in Sources */,
 				89E6EDED1A88A7A10084F8ED /* ViewController.m in Sources */,
+				891E174A1AA6B0AC009B7F9F /* PerlinNoiseTestViewController.m in Sources */,
 				89E6EE0F1A88ABC20084F8ED /* DandelionViewController.m in Sources */,
 				89B1F5211A9030BC00965B8E /* ContentTestViewController.m in Sources */,
 				89E6EDEA1A88A7A10084F8ED /* AppDelegate.m in Sources */,

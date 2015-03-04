@@ -6,9 +6,21 @@
 	<array>
 		<dict>
 			<key>title</key>
+			<string>PerlinNoiseTest</string>
+			<key>viewControllerName</key>
+			<string>PerlinNoiseTestViewController</string>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>CAShapeLayer</string>
 			<key>viewControllerName</key>
 			<string>CAShapeLayerTestViewController</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>CATextLayer</string>
+			<key>viewControllerName</key>
+			<string>CATextLayerTestViewController</string>
 		</dict>
 		<dict>
 			<key>title</key>
