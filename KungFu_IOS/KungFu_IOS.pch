@@ -10,5 +10,6 @@
 #define KungFu_IOS_KungFu_IOS_pch
 
 #import "CACONSTS.h"
+#import "FuntionalMacro.h"
 
 #endif

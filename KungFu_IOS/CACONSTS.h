@@ -15,4 +15,9 @@
 #define kScreen_CenterX                     kScreen_Width/2
 #define kScreen_CenterY                     kScreen_Height/2
 
+
+
+#define ARC4RANDOM_MAX      0x100000000
+#define RAND_BETWEEN_0_1    ((double)arc4random() / ARC4RANDOM_MAX)
+
 #endif
