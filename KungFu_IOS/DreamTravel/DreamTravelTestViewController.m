@@ -8,18 +8,17 @@
 
 #import "DreamTravelTestViewController.h"
 #import "LandscapeAtom.h"
-#import "PerlinNoise.h"
-
 
 #define LANDSCAPE_LAYERS_NUM        10
 
 @interface DreamTravelTestViewController ()
 {
-    PerlinNoise* perlinNoise;
     NSMutableArray* landscapeViews;
     
     LandscapeMoveDirection curMoveDir;
     float curMoveDuration;
+    
+    UILabel* bugTestLabel;
 }
 
 @end
@@ -43,16 +42,12 @@
 
 - (void)initData
 {
-    perlinNoise = [[PerlinNoise alloc] initWithSeed:25];
     landscapeViews = [NSMutableArray array];
-    
-    curMoveDir = LandscapeMoveDirectionLeft;
-    curMoveDuration = 8.0f;
 }
 
 - (void)addLandscapeAtomTest
 {
-    for (NSUInteger i = 0; i < 10; i ++) {
+    for (NSUInteger i = 0; i < 11; i ++) {
         NSString* name = [NSString stringWithFormat:@"山峰 %@", @(i)];
         NSUInteger zIndex = arc4random_uniform(LANDSCAPE_LAYERS_NUM);
         
@@ -63,7 +58,7 @@
         NSLog(@"lifeTime %@, zIndex %@", @(landscape.lifeTime), @(landscape.zIndex));
         
         CGAffineTransform transform = CGAffineTransformIdentity;
-        landscape.transform = CGAffineTransformScale(transform, 1 + landscape.zIndex / 6.0, 1 + landscape.zIndex / 6.0);
+        landscape.transform = CGAffineTransformScale(transform, 1 + landscape.zIndex * 1.0 / LANDSCAPE_LAYERS_NUM, 1 + landscape.zIndex * 1.0 / LANDSCAPE_LAYERS_NUM);
         [self.view addSubview:landscape];
         
         [landscapeViews addObject:landscape];
@@ -72,45 +67,71 @@
 
 - (void)animateLandscapeViews
 {
+    NSArray* moveInfoArr = [self nextLandscapeMoveDirectionInfo];
+    curMoveDuration = [moveInfoArr[1] floatValue];
+
+    for (LandscapeAtom* landscape in landscapeViews) {
+        CABasicAnimation* animation = [CABasicAnimation animation];
+        animation.keyPath = @"transform";
+        animation.duration = curMoveDuration;
+        animation.fromValue = [NSValue valueWithCATransform3D:landscape.layer.transform];
+        CATransform3D transform = [self transformOfLandscape:landscape directionInfo:moveInfoArr];
+        animation.toValue = [NSValue valueWithCATransform3D:transform];
+        [landscape.layer setValue:animation.toValue forKeyPath:animation.keyPath];
+        animation.delegate = self;
+        [animation setValue:@"landscapeAnime" forKey:@"landscape"];
+        [landscape.layer addAnimation:animation forKey:nil];
+    }
+}
+
+- (CATransform3D)transformOfLandscape:(LandscapeAtom *)landscape directionInfo:(NSArray *)directonInfo
+{
+    curMoveDir = [directonInfo[0] integerValue];
     CGFloat moveDistance = 100.0;
-    if (curMoveDir == LandscapeMoveDirectionRight) {
-        moveDistance *= 1;
-    } else if (curMoveDir == LandscapeMoveDirectionLeft) {
-        moveDistance *= -1;
+    CGFloat tx = landscape.zIndex * 1.0 / LANDSCAPE_LAYERS_NUM * moveDistance;
+    CATransform3D transform = landscape.layer.transform;
+    
+    if (curMoveDir == LandscapeMoveDirectionLeft) {
+        transform = CATransform3DTranslate(transform, -tx, 0, 0);
+    } else if (curMoveDir == LandscapeMoveDirectionRight) {
+        transform = CATransform3DTranslate(transform, tx, 0, 0);
+    } else if (curMoveDir == LandscapeMoveDirectionIntoScreen) {
+        transform = CATransform3DScale(transform, 2, 2, 1);
+    } else if (curMoveDir == LandscapeMoveDirectionOutScreen) {
+        transform = CATransform3DScale(transform, 0.5, 0.5, 1);
     }
     
-    [UIView animateWithDuration:curMoveDuration delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-        for (LandscapeAtom* landscape in landscapeViews) {
-            CGFloat tx = landscape.zIndex * 1.0 / LANDSCAPE_LAYERS_NUM * moveDistance;
-            landscape.transform = CGAffineTransformTranslate(landscape.transform, tx, 0);
-        }
-    } completion:^(BOOL finished) {
-        if (finished) {
-            NSArray* moveInfoArr = [self nextLandscapeMoveDirectionInfo];
-            curMoveDir = [moveInfoArr[0] integerValue];
-            curMoveDuration = [moveInfoArr[1] floatValue];
-            CGFloat moveDistance = 100.0;
-            if (curMoveDir == LandscapeMoveDirectionRight) {
-                moveDistance *= 1;
-            } else if (curMoveDir == LandscapeMoveDirectionLeft) {
-                moveDistance *= -1;
-            }
-            [UIView animateWithDuration:curMoveDuration delay:0 options:UIViewAnimationOptionCurveLinear animations:^{
-                for (LandscapeAtom* landscape in landscapeViews) {
-                    CGFloat tx = landscape.zIndex * 1.0 / LANDSCAPE_LAYERS_NUM * moveDistance;
-                    landscape.transform = CGAffineTransformTranslate(landscape.transform, tx, 0);
-                }
-            } completion:NULL];
-        }
-    }];
+    return transform;
 }
 
 - (NSArray *)nextLandscapeMoveDirectionInfo
 {
-//    LandscapeMoveDirection dir = arc4random_uniform(4);
-//    float moveDuration = arc4random() % 8 + 4;
-//    return @[@(dir), @(moveDuration)];
-    return @[@(LandscapeMoveDirectionRight), @(4)];
+    LandscapeMoveDirection dir = arc4random_uniform(4);
+    float moveDuration = arc4random() % 8 + 4;
+    return @[@(dir), @(moveDuration)];
+}
+
+#pragma mark - CAAnimationDelegate
+
+- (void)animationDidStop:(CABasicAnimation *)anim finished:(BOOL)flag
+{
+    NSArray* moveInfoArr = [self nextLandscapeMoveDirectionInfo];
+    curMoveDuration = [moveInfoArr[1] floatValue];
+    
+    static int i = 0;
+    i++;
+    if (i % landscapeViews.count == 0) {
+        for (LandscapeAtom* landscape in landscapeViews) {
+            CABasicAnimation* animation = [CABasicAnimation animation];
+            animation.keyPath = @"transform";
+            animation.duration = curMoveDuration;
+            animation.fromValue = [NSValue valueWithCATransform3D:landscape.layer.transform];
+            CATransform3D transform = [self transformOfLandscape:landscape directionInfo:moveInfoArr];
+            animation.toValue = [NSValue valueWithCATransform3D:transform];
+            [landscape.layer setValue:animation.toValue forKeyPath:animation.keyPath];
+            [landscape.layer addAnimation:animation forKey:nil];
+        }
+    }
 }
 
 @end
