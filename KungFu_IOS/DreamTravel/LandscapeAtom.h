@@ -14,10 +14,11 @@ typedef NS_ENUM(NSUInteger, LandscapeViewType)
     LandscapeViewTypeText
 };
 
-@interface LandscapeAtom : UIView
+@interface LandscapeAtom : NSObject
 
+@property (nonatomic, assign) CGRect frame;
 @property (nonatomic, assign) LandscapeViewType landscapeViewType;
-@property (nonatomic, strong) UIView* landscapeView;
+@property (nonatomic, strong) CALayer* landscapeLayer;
 @property (nonatomic, strong) NSString* landscapeName;
 @property (nonatomic, assign) CGFloat lifeTime;
 @property (nonatomic, assign) NSUInteger zIndex;

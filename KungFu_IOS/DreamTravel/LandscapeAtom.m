@@ -12,28 +12,35 @@
 
 - (id)initWithFrame:(CGRect)frame landscapeName:(NSString *)landscapeName
 {
-    self = [super initWithFrame:frame];
+    self = [super init];
     if (self) {
+        _frame = frame;
         _landscapeName = landscapeName;
         _landscapeViewType = LandscapeViewTypeText;
         
-        [self addLandscapeViewWithText];
+        [self initLandscapeLayerWithText];
     }
     
     return self;
 }
 
-- (void)addLandscapeViewWithText
-{
-    UILabel* landscapeLabel = [[UILabel alloc] initWithFrame:self.bounds];
-    landscapeLabel.text = _landscapeName;
-    landscapeLabel.textColor = [UIColor blackColor];
-    landscapeLabel.textAlignment = NSTextAlignmentLeft;
-    landscapeLabel.backgroundColor = [UIColor clearColor];
-    landscapeLabel.font = [UIFont systemFontOfSize:25];
+- (void)initLandscapeLayerWithText
+{   
+    CATextLayer* landscapeLayer = [CATextLayer layer];
+    landscapeLayer.frame = _frame;
+    landscapeLayer.string = _landscapeName;
+    landscapeLayer.foregroundColor = [UIColor blackColor].CGColor;
+    landscapeLayer.alignmentMode = kCAAlignmentLeft;
+    landscapeLayer.backgroundColor = [UIColor clearColor].CGColor;
     
-    _landscapeView = landscapeLabel;
-    [self addSubview:_landscapeView];
+    UIFont* font = [UIFont systemFontOfSize:25];
+    CFStringRef fontName = (__bridge CFStringRef)font.fontName;
+    CGFontRef fontRef = CGFontCreateWithFontName(fontName);
+    landscapeLayer.font = fontRef;
+    landscapeLayer.fontSize = font.pointSize;
+    CGFontRelease(fontRef);
+    
+    _landscapeLayer = landscapeLayer;
 }
 
 

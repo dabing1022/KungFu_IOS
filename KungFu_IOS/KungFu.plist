@@ -18,6 +18,12 @@
 		</dict>
 		<dict>
 			<key>title</key>
+			<string>ImplicitAnimationsTest 隐式动画</string>
+			<key>viewControllerName</key>
+			<string>ImplicitAnimationsViewController</string>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>CAShapeLayer</string>
 			<key>viewControllerName</key>
 			<string>CAShapeLayerTestViewController</string>

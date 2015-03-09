@@ -4,7 +4,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6247"/>
     </dependencies>
     <scenes>
-        <!--KungFuDemos-->
+        <!--功·夫-->
         <scene sceneID="hC4-9x-cqP">
             <objects>
                 <tableViewController id="oGM-w5-qNz" customClass="ViewController" sceneMemberID="viewController">
@@ -25,7 +25,7 @@
                             <outlet property="delegate" destination="oGM-w5-qNz" id="ibO-n8-8T0"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="KungFuDemos" id="ssF-di-kjp"/>
+                    <navigationItem key="navigationItem" title="功·夫" id="ssF-di-kjp"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nEF-jo-hGd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
