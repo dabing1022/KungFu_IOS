@@ -17,6 +17,7 @@
         _frame = frame;
         _landscapeName = landscapeName;
         _landscapeViewType = LandscapeViewTypeText;
+        _isFadeIn = YES;
         
         [self initLandscapeLayerWithText];
     }
@@ -31,6 +32,7 @@
     landscapeLayer.string = _landscapeName;
     landscapeLayer.foregroundColor = [UIColor blackColor].CGColor;
     landscapeLayer.alignmentMode = kCAAlignmentLeft;
+    landscapeLayer.contentsScale = [UIScreen mainScreen].scale;
     landscapeLayer.backgroundColor = [UIColor clearColor].CGColor;
     
     UIFont* font = [UIFont systemFontOfSize:25];

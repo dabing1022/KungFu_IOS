@@ -8,14 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, LandscapeMoveDirection)
-{
-    LandscapeMoveDirectionIntoScreen,
-    LandscapeMoveDirectionOutScreen,
-    LandscapeMoveDirectionLeft,
-    LandscapeMoveDirectionRight
-};
-
 @interface DreamTravelTestViewController : UIViewController
 
 @end

@@ -14,14 +14,24 @@ typedef NS_ENUM(NSUInteger, LandscapeViewType)
     LandscapeViewTypeText
 };
 
+typedef NS_ENUM(NSUInteger, LandscapeMoveDirection)
+{
+    LandscapeMoveDirectionIntoScreen,
+    LandscapeMoveDirectionOutScreen,
+    LandscapeMoveDirectionLeft,
+    LandscapeMoveDirectionRight
+};
+
 @interface LandscapeAtom : NSObject
 
 @property (nonatomic, assign) CGRect frame;
+@property (nonatomic, assign) BOOL isFadeIn;
 @property (nonatomic, assign) LandscapeViewType landscapeViewType;
 @property (nonatomic, strong) CALayer* landscapeLayer;
 @property (nonatomic, strong) NSString* landscapeName;
 @property (nonatomic, assign) CGFloat lifeTime;
 @property (nonatomic, assign) NSUInteger zIndex;
+@property (nonatomic, assign) CGFloat targetOpacity;
 
 - (id)initWithFrame:(CGRect)frame landscapeName:(NSString *)landscapeName;
 

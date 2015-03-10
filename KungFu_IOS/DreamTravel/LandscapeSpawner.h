@@ -7,14 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LandscapeAtom.h"
 
 #define LANDSCAPE_LAYERS_NUM        10
 
 @class LandscapeAtom;
 @interface LandscapeSpawner : NSObject
 
-@property (nonatomic, assign) NSTimeInterval spawnTimeUnit;
+@property (nonatomic, strong) NSArray* dataSource;
 
-- (LandscapeAtom *)spawn;
+- (LandscapeAtom *)spawnByDirection:(LandscapeMoveDirection)direction;
 
 @end

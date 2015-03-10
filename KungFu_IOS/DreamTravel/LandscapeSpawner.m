@@ -11,14 +11,36 @@
 
 @implementation LandscapeSpawner
 
-- (LandscapeAtom *)spawn
+- (id)init
 {
-    NSString* name = [NSString stringWithFormat:@"山峰 %@", @(arc4random_uniform(100))];
+    self = [super init];
+    if (self) {
+        _dataSource = @[@"山峰", @"老树", @"古道", @"小河"];
+    }
+    
+    return self;
+}
+
+- (LandscapeAtom *)spawnByDirection:(LandscapeMoveDirection)direction
+{    
+    NSString* name = _dataSource[arc4random_uniform(_dataSource.count)];
     NSUInteger zIndex = arc4random_uniform(LANDSCAPE_LAYERS_NUM);
     
-    LandscapeAtom* landscape = [[LandscapeAtom alloc] initWithFrame:CGRectMake(arc4random_uniform(kScreen_Width), 50 + 30 * zIndex, 100, 30) landscapeName:name];
-    landscape.landscapeLayer.opacity = (zIndex + 1.0) / 10.0;
-    landscape.lifeTime = arc4random_uniform(4) + 4;
+    CGFloat posX;
+    CGFloat width = 100.0;
+    CGFloat height = 30.0;
+    if (direction == LandscapeMoveDirectionLeft) {
+        posX = kScreen_Width + arc4random_uniform(50);
+    } else if (direction == LandscapeMoveDirectionRight) {
+        posX = 0 - arc4random_uniform(50) - width;
+    } else {
+        posX = arc4random_uniform(kScreen_Width - 50) + 25;
+    }
+    
+    LandscapeAtom* landscape = [[LandscapeAtom alloc] initWithFrame:CGRectMake(posX, 50 + 30 * zIndex, width, height) landscapeName:name];
+    landscape.landscapeLayer.opacity = 0;
+    landscape.targetOpacity = (zIndex + 1.0) / 10.0;
+    landscape.lifeTime = arc4random_uniform(4) + 10;
     landscape.zIndex = zIndex;
 
     return landscape;

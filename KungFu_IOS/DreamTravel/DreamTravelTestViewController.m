@@ -9,15 +9,26 @@
 #import "DreamTravelTestViewController.h"
 #import "LandscapeAtom.h"
 #import "LandscapeSpawner.h"
+#import "PerlinNoise.h"
 
 @interface DreamTravelTestViewController ()
 {
+    PerlinNoise* perlinNoise;
+    
     NSMutableArray* landscapes;
     NSMutableArray* landscapeLayers;
 
     LandscapeSpawner* spawner;
     LandscapeMoveDirection curMoveDir;
     float curMoveDuration;
+    
+    CADisplayLink* displayLink;
+    CGFloat velocity;
+    CGFloat tickerNum;
+    
+    NSMutableArray* landscapeToBeDeleted;
+    
+    UILabel* fpsLabel;
 }
 
 @end
@@ -28,60 +39,178 @@
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
     [self initData];
+    [self addFpsLabel];
+    
+    NSArray* moveInfo = [self nextLandscapeMoveDirectionInfo];
+    curMoveDir = [moveInfo[0] integerValue];
+    curMoveDuration = [moveInfo[1] floatValue];
     
     for (NSUInteger i = 0; i < 5; i++) {
-        [self spawnLandscape];
+        [self spawnLandscapeByMoveDirection:curMoveDir];
     }
-    [self performSelector:@selector(animateLandscapeViews) withObject:nil afterDelay:2];
+    
+    displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(travelling:)];
+    [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
 }
 
 - (void)viewDidDisappear:(BOOL)animated
 {
     [super viewDidDisappear:animated];
-    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(animateLandscapeViews) object:nil];
+    
+    [displayLink removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSRunLoopCommonModes];
+    [displayLink invalidate];
+    displayLink = nil;
 }
 
 - (void)dealloc
 {
-    [self.view.layer removeAllAnimations];
-
     DebugMethod();
+}
+
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    DebugMethod();
+    displayLink.paused = YES;
+}
+
+- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    DebugMethod();
+    UITouch* touch = [touches anyObject];
+    CGPoint previousPos = [touch previousLocationInView:self.view];
+    CGPoint nowPos = [touch locationInView:self.view];
+    CGFloat deltaX = nowPos.x - previousPos.x;
+    CGFloat deltaY = nowPos.y - previousPos.y;
+    
+    for (LandscapeAtom* landscape in landscapes) {
+        CALayer* layer = landscape.landscapeLayer;
+        CGFloat speed = landscape.zIndex * 1.0 / LANDSCAPE_LAYERS_NUM * velocity;
+        CATransform3D transform = layer.transform;
+        if (deltaX > 0) {
+            transform = CATransform3DTranslate(transform, speed * 0.05, 0, 0);
+        } else {
+            transform = CATransform3DTranslate(transform, -speed * 0.05, 0, 0);
+        }
+        
+        if (deltaY > 0) {
+            transform = CATransform3DTranslate(transform, 0, speed * 0.01, 0);
+        } else {
+            transform = CATransform3DTranslate(transform, 0, -speed * 0.01, 0);
+        }
+        layer.transform = transform;
+    }
+}
+
+- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    DebugMethod();
+    displayLink.paused = NO;
+}
+
+- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
+{
+    DebugMethod();
+    displayLink.paused = YES;
 }
 
 - (void)initData
 {
+    perlinNoise = [[PerlinNoise alloc] initWithSeed:25];
     spawner = [[LandscapeSpawner alloc] init];
     landscapes = [NSMutableArray array];
+    landscapeToBeDeleted = [NSMutableArray array];
     landscapeLayers = [NSMutableArray arrayWithCapacity:LANDSCAPE_LAYERS_NUM];
     for (NSUInteger i = 0; i < LANDSCAPE_LAYERS_NUM; i++) {
-        CALayer* layer = [CALayer layer];
-        [self.view.layer addSublayer:layer];
-
-        [landscapeLayers addObject:layer];
+        CAScrollLayer* scrollLayer = [CAScrollLayer layer];
+        [self.view.layer addSublayer:scrollLayer];
         
-        [KungFuHelper debugLayer:layer enabled:YES];
+        CATransform3D transform = CATransform3DIdentity;
+        CGFloat scale = 1 + i * 1.0 / LANDSCAPE_LAYERS_NUM;
+        scrollLayer.transform = CATransform3DScale(transform, scale, scale, 1);
+
+        [landscapeLayers addObject:scrollLayer];
     }
-    [KungFuHelper debugLayer:self.view.layer enabled:YES];
+    
+    velocity = 150.0;
 }
 
-- (void)spawnLandscape
+- (void)addFpsLabel
 {
-    LandscapeAtom* landscape = [spawner spawn];
+    fpsLabel = [[UILabel alloc] initWithFrame:CGRectMake(10, 50, 150, 50)];
+    fpsLabel.textColor = [UIColor redColor];
+    fpsLabel.backgroundColor = [UIColor clearColor];
+    fpsLabel.font = [UIFont systemFontOfSize:30];
+    [self.view addSubview:fpsLabel];
+}
+
+- (void)travelling:(CADisplayLink *)timer
+{
+    fpsLabel.text = [NSString stringWithFormat:@"%.1f FPS", 1.0 / timer.duration];
+    
+    tickerNum += 0.05;
+    if (tickerNum >= curMoveDuration) {
+        tickerNum = 0;
+        
+        NSArray* moveInfo = [self nextLandscapeMoveDirectionInfo];
+        curMoveDir = [moveInfo[0] integerValue];
+        curMoveDuration = [moveInfo[1] floatValue];
+        
+        [self spawnLandscapeByMoveDirection:curMoveDir];
+    }
+    
+    if (curMoveDir == LandscapeMoveDirectionIntoScreen) {
+        for (CALayer* layer in landscapeLayers) {
+            layer.transform = CATransform3DScale(layer.transform, 1.001, 1.001, 1);
+        }
+    } else if (curMoveDir == LandscapeMoveDirectionOutScreen) {
+        for (CALayer* layer in landscapeLayers) {
+            layer.transform = CATransform3DScale(layer.transform, 0.999, 0.999, 1);
+        }
+    } else {
+        for (LandscapeAtom* landscape in landscapes) {
+            CALayer* layer = landscape.landscapeLayer;
+            CGFloat speed = landscape.zIndex * 1.0 / LANDSCAPE_LAYERS_NUM * velocity;
+            CATransform3D transform = layer.transform;
+            if (curMoveDir == LandscapeMoveDirectionLeft) {
+                transform = CATransform3DTranslate(transform, -speed * timer.duration, 0, 0);
+            } else {
+                transform = CATransform3DTranslate(transform, speed * timer.duration, 0, 0);
+            }
+            layer.transform = transform;
+        }
+    }
+    
+    for (LandscapeAtom* landscape in landscapes) {
+        if (landscape.landscapeLayer.opacity < landscape.targetOpacity && landscape.isFadeIn) {
+            landscape.landscapeLayer.opacity += 0.02;
+        } else {
+            landscape.isFadeIn = NO;
+            landscape.landscapeLayer.opacity -= 0.0005;
+            
+            if (landscape.landscapeLayer.opacity <= 0) {
+                [landscapeToBeDeleted addObject:landscape];
+            }
+        }
+    }
+    
+    for (LandscapeAtom* landscape in landscapeToBeDeleted) {
+        [landscape.landscapeLayer removeFromSuperlayer];
+        [landscapes removeObject:landscape];
+    }
+    [landscapeToBeDeleted removeAllObjects];
+}
+
+- (void)spawnLandscapeByMoveDirection:(LandscapeMoveDirection)direction
+{
+    LandscapeAtom* landscape = [spawner spawnByDirection:direction];
     NSLog(@"==== spawn landscape lifeTime %@, zIndex %@", @(landscape.lifeTime), @(landscape.zIndex));
     
     CALayer* layer = [self layerOfLandscape:landscape];
     [layer addSublayer:landscape.landscapeLayer];
     
-    [KungFuHelper debugLayer:landscape.landscapeLayer enabled:YES];
-    
-    [CATransaction begin];
-    [CATransaction setDisableActions:YES];
-    CATransform3D transform = CATransform3DIdentity;
-    CGFloat scale = 1 + landscape.zIndex * 1.0 / LANDSCAPE_LAYERS_NUM;
-    layer.transform = CATransform3DScale(transform, scale, scale, 1);
-    [CATransaction commit];
-    
     [landscapes addObject:landscape];
+    
+    [KungFuHelper debugLayer:landscape.landscapeLayer enabled:NO];
 }
 
 - (CALayer *)layerOfLandscape:(LandscapeAtom *)landscape
@@ -89,105 +218,27 @@
     return [landscapeLayers objectAtIndex:landscape.zIndex];
 }
 
-- (void)animateLandscapeViews
-{
-    DebugMethod();
-    NSArray* moveInfoArr = [self nextLandscapeMoveDirectionInfo];
-    curMoveDuration = [moveInfoArr[1] floatValue];
-    [self performSelector:@selector(animateLandscapeViews) withObject:nil afterDelay:curMoveDuration];
-
-    NSLog(@"landscapes num %@", @(landscapes.count));
-
-    for (LandscapeAtom* landscape in landscapes) {
-        CABasicAnimation* transformAnimation = [CABasicAnimation animation];
-        transformAnimation.keyPath = @"transform";
-        transformAnimation.duration = curMoveDuration;
-        CATransform3D transform = [self transformOfLandscape:landscape directionInfo:moveInfoArr];
-        transformAnimation.toValue = [NSValue valueWithCATransform3D:transform];
-        transformAnimation.delegate = self;
-        [transformAnimation setValue:@"landscapeTransformAnime" forKey:@"landscape"];
-    
-        CALayer* layer = [self layerOfLandscape:landscape];
-        [self applyBasicAnimation:transformAnimation toLayer:layer forKey:nil];
-    
-        if (![landscape.landscapeLayer animationForKey:@"landscape"]) {
-            CABasicAnimation* fadeOutAnimation = [CABasicAnimation animation];
-            fadeOutAnimation.keyPath = @"opacity";
-            fadeOutAnimation.duration = landscape.lifeTime;
-            fadeOutAnimation.toValue = @(0);
-            fadeOutAnimation.delegate = self;
-            [fadeOutAnimation setValue:@"landscapeFadeOutAnime" forKey:@"landscape"];
-            [fadeOutAnimation setValue:landscape forKey:@"landscapeAtom"];
-            [self applyBasicAnimation:fadeOutAnimation toLayer:landscape.landscapeLayer forKey:@"landscapeFadeOut"];
-        }
-    }
-}
-
-- (void)applyBasicAnimation:(CABasicAnimation *)animation toLayer:(CALayer *)layer forKey:(NSString *)key
-{
-    animation.fromValue = [layer.presentationLayer ? : layer valueForKey:animation.keyPath];
-
-    [CATransaction begin];
-    [CATransaction setDisableActions:YES];
-    [layer setValue:animation.toValue forKeyPath:animation.keyPath];
-    
-    if ([[animation valueForKey:@"landscape"] isEqualToString:@"landscapeTransformAnime"]) {
-        NSLog(@"%f %f %f %f", layer.transform.m11, layer.transform.m21, layer.transform.m31, layer.transform.m41);
-        NSLog(@"%f %f %f %f", layer.transform.m12, layer.transform.m22, layer.transform.m32, layer.transform.m42);
-        NSLog(@"%f %f %f %f", layer.transform.m13, layer.transform.m23, layer.transform.m33, layer.transform.m43);
-        NSLog(@"%f %f %f %f", layer.transform.m14, layer.transform.m24, layer.transform.m34, layer.transform.m44);
-    }
-    
-    [CATransaction commit];
-    
-    [layer addAnimation:animation forKey:key];
-}
-
-- (CATransform3D)transformOfLandscape:(LandscapeAtom *)landscape directionInfo:(NSArray *)directonInfo
-{
-    curMoveDir = [directonInfo[0] integerValue];
-    CGFloat moveDistance = 100.0;
-    CGFloat tx = landscape.zIndex * 1.0 / LANDSCAPE_LAYERS_NUM * moveDistance;
-    
-    CALayer* layer = [landscapeLayers objectAtIndex:landscape.zIndex];
-    CATransform3D transform = layer.transform;
-    
-    if (curMoveDir == LandscapeMoveDirectionLeft) {
-        transform = CATransform3DTranslate(transform, -tx, 0, 0);
-    } else if (curMoveDir == LandscapeMoveDirectionRight) {
-        transform = CATransform3DTranslate(transform, tx, 0, 0);
-    } else if (curMoveDir == LandscapeMoveDirectionIntoScreen) {
-        transform = CATransform3DScale(transform, 2, 2, 1);
-    } else if (curMoveDir == LandscapeMoveDirectionOutScreen) {
-        transform = CATransform3DScale(transform, 0.5, 0.5, 1);
-    }
-    
-    return transform;
-}
-
 - (NSArray *)nextLandscapeMoveDirectionInfo
 {
-    LandscapeMoveDirection dir = arc4random_uniform(4);
+    LandscapeMoveDirection dir = LandscapeMoveDirectionLeft;
+    
+    float noise = [perlinNoise perlin1DValueForPoint:CACurrentMediaTime()];
+    NSLog(@"noise =============== %f", noise);
+    if (noise < 0.45) {
+        dir = LandscapeMoveDirectionLeft;
+        NSLog(@"========== move left ");
+    } else if (noise < 0.8) {
+        dir = LandscapeMoveDirectionRight;
+        NSLog(@"========== move right");
+    } else if (noise < 0.9) {
+        dir = LandscapeMoveDirectionOutScreen;
+        NSLog(@"========== out screen");
+    } else {
+        dir = LandscapeMoveDirectionIntoScreen;
+        NSLog(@"========== into screen");
+    }
     float moveDuration = arc4random() % 8 + 4;
     return @[@(dir), @(moveDuration)];
-}
-
-#pragma mark - CAAnimationDelegate
-
-- (void)animationDidStop:(CABasicAnimation *)anim finished:(BOOL)flag
-{
-    if ([[anim valueForKey:@"landscape"] isEqualToString:@"landscapeFadeOutAnime"]) {
-        static NSUInteger i = 0;
-        i++;
-        LandscapeAtom* landscape = (LandscapeAtom *)[anim valueForKey:@"landscapeAtom"];
-        NSLog(@"alpha --> 0, layer removed, landscape %@", landscape.landscapeName);
-        [landscapes removeObject:landscape];
-        [landscape.landscapeLayer removeFromSuperlayer];
-
-        if (i % 2 == 0 || landscapes.count == 0) {
-            [self spawnLandscape];
-        }
-    }
 }
 
 @end
