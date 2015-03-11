@@ -13,9 +13,10 @@
     UIColor* waterColor;
     
     CGFloat linePointY;
-    CGFloat delta;
-    BOOL waveUp;
-    CGFloat waveHeight;
+    
+    CGFloat circleTimeDelta;     // 纵向波浪点的正弦周期改变的偏差值
+    CGFloat waveSinAmplitude;    // 纵向波浪点的正弦周期的振幅，外观表现为波浪上下振动的幅度
+    CGFloat waveVibrationSpeed;  // 波浪上下振荡速度，修改其值大小从外观上影响波浪的速度
     
     CADisplayLink* displayLink;
 }
@@ -31,9 +32,11 @@
         self.backgroundColor = [UIColor whiteColor];
         
         waterColor = [UIColor colorWithRed:64.0/255.0f green:164.0/255.0f blue:245.0/255.0f alpha:1];
+        
         linePointY = kScreen_CenterY;
-        waveHeight = 1.5;
-        delta = 0;
+        circleTimeDelta = 0;
+        waveSinAmplitude = 1.5;
+        waveVibrationSpeed = 0.3;
         
         displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateWaveData:)];
         [displayLink addToRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
@@ -51,9 +54,7 @@
 
 - (void)updateWaveData:(CADisplayLink *)dLink
 {
-    delta += 0.1;
-    
-    NSLog(@"updae");
+    circleTimeDelta += waveVibrationSpeed;
     
     [self setNeedsDisplay];
 }
@@ -68,7 +69,7 @@
     CGPathMoveToPoint(path, NULL, 0, linePointY);
     CGFloat y = linePointY;
     for(CGFloat x = 0; x <= kScreen_Width; x++){
-        y = waveHeight * sin( x / 180 * M_PI + delta) * 5 + linePointY;
+        y = waveSinAmplitude * sin( x / 180 * M_PI + circleTimeDelta) * 5 + linePointY;
         CGPathAddLineToPoint(path, nil, x, y);
     }
     
