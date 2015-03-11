@@ -23,6 +23,7 @@
 		895754F81AAC0E4600D21ED3 /* ImplicitAnimationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 895754F71AAC0E4600D21ED3 /* ImplicitAnimationsViewController.m */; };
 		895755011AAC57F600D21ED3 /* LandscapeSpawner.m in Sources */ = {isa = PBXBuildFile; fileRef = 895755001AAC57F600D21ED3 /* LandscapeSpawner.m */; };
 		895755041AAD57D000D21ED3 /* KungFuHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 895755031AAD57D000D21ED3 /* KungFuHelper.m */; };
+		896912C81AB04D3800B0A760 /* CAWaterWaveDemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 896912C71AB04D3800B0A760 /* CAWaterWaveDemoView.m */; };
 		897023A91AA942F500AF5805 /* DreamTravelTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 897023A81AA942F500AF5805 /* DreamTravelTestViewController.m */; };
 		897023AC1AA94AC600AF5805 /* LandscapeAtom.m in Sources */ = {isa = PBXBuildFile; fileRef = 897023AB1AA94AC600AF5805 /* LandscapeAtom.m */; };
 		89B1F5211A9030BC00965B8E /* ContentTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B1F5201A9030BC00965B8E /* ContentTestViewController.m */; };
@@ -79,6 +80,8 @@
 		895755001AAC57F600D21ED3 /* LandscapeSpawner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapeSpawner.m; sourceTree = "<group>"; };
 		895755021AAD57D000D21ED3 /* KungFuHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KungFuHelper.h; sourceTree = "<group>"; };
 		895755031AAD57D000D21ED3 /* KungFuHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KungFuHelper.m; sourceTree = "<group>"; };
+		896912C61AB04D3800B0A760 /* CAWaterWaveDemoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAWaterWaveDemoView.h; sourceTree = "<group>"; };
+		896912C71AB04D3800B0A760 /* CAWaterWaveDemoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAWaterWaveDemoView.m; sourceTree = "<group>"; };
 		897023A71AA942F500AF5805 /* DreamTravelTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DreamTravelTestViewController.h; sourceTree = "<group>"; };
 		897023A81AA942F500AF5805 /* DreamTravelTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DreamTravelTestViewController.m; sourceTree = "<group>"; };
 		897023AA1AA94AC600AF5805 /* LandscapeAtom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapeAtom.h; sourceTree = "<group>"; };
@@ -289,6 +292,8 @@
 			children = (
 				89E6EE161A88AE3C0084F8ED /* CATravelView.h */,
 				89E6EE171A88AE3C0084F8ED /* CATravelView.m */,
+				896912C61AB04D3800B0A760 /* CAWaterWaveDemoView.h */,
+				896912C71AB04D3800B0A760 /* CAWaterWaveDemoView.m */,
 			);
 			path = Quartz;
 			sourceTree = "<group>";
@@ -422,6 +427,7 @@
 				891E17371A9051B5009B7F9F /* SimpleClockViewController.m in Sources */,
 				89E6EE181A88AE3C0084F8ED /* CATravelView.m in Sources */,
 				89E6EDE71A88A7A10084F8ED /* main.m in Sources */,
+				896912C81AB04D3800B0A760 /* CAWaterWaveDemoView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

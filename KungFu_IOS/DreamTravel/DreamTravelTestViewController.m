@@ -29,6 +29,8 @@
     NSMutableArray* landscapeToBeDeleted;
     
     UILabel* fpsLabel;
+    
+    CALayer* transformTestLayer;
 }
 
 @end
@@ -121,14 +123,15 @@
     landscapeToBeDeleted = [NSMutableArray array];
     landscapeLayers = [NSMutableArray arrayWithCapacity:LANDSCAPE_LAYERS_NUM];
     for (NSUInteger i = 0; i < LANDSCAPE_LAYERS_NUM; i++) {
-        CAScrollLayer* scrollLayer = [CAScrollLayer layer];
-        [self.view.layer addSublayer:scrollLayer];
+        CALayer* layer = [CALayer layer];
+        [self.view.layer addSublayer:layer];
+        [KungFuHelper debugLayer:layer enabled:YES];
         
         CATransform3D transform = CATransform3DIdentity;
         CGFloat scale = 1 + i * 1.0 / LANDSCAPE_LAYERS_NUM;
-        scrollLayer.transform = CATransform3DScale(transform, scale, scale, 1);
+        layer.transform = CATransform3DScale(transform, scale, scale, 1);
 
-        [landscapeLayers addObject:scrollLayer];
+        [landscapeLayers addObject:layer];
     }
     
     velocity = 150.0;

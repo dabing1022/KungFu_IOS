@@ -54,6 +54,12 @@
 		</dict>
 		<dict>
 			<key>title</key>
+			<string>波浪</string>
+			<key>viewName</key>
+			<string>CAWaterWaveDemoView</string>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>蒲公英</string>
 			<key>viewControllerName</key>
 			<string>DandelionViewController</string>
