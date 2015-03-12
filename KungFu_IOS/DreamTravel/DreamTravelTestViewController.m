@@ -11,10 +11,14 @@
 #import "LandscapeSpawner.h"
 #import "PerlinNoise.h"
 
+#define LANDSCAPE_VELOCITY_MANUALLY            10
+#define LANDSCAPE_VELOCITY_AUTO                100
+
 @interface DreamTravelTestViewController ()
 {
     PerlinNoise* perlinNoise;
     
+    UIView* landscapeContainerView;
     NSMutableArray* landscapes;
     NSMutableArray* landscapeLayers;
 
@@ -23,7 +27,6 @@
     float curMoveDuration;
     
     CADisplayLink* displayLink;
-    CGFloat velocity;
     CGFloat tickerNum;
     
     NSMutableArray* landscapeToBeDeleted;
@@ -31,6 +34,12 @@
     UILabel* fpsLabel;
     
     CALayer* transformTestLayer;
+    
+    UITapGestureRecognizer* doubleTapGes;
+    UIPanGestureRecognizer* panGes;
+    UIPinchGestureRecognizer* pinchGes;
+    CGFloat pinchLastScale;
+    CGPoint pinchLastPoint;
 }
 
 @end
@@ -46,6 +55,17 @@
     NSArray* moveInfo = [self nextLandscapeMoveDirectionInfo];
     curMoveDir = [moveInfo[0] integerValue];
     curMoveDuration = [moveInfo[1] floatValue];
+    
+    doubleTapGes = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(doubleTapHandler:)];
+    doubleTapGes.numberOfTouchesRequired = 1;
+    doubleTapGes.numberOfTapsRequired = 2;
+    [self.view addGestureRecognizer:doubleTapGes];
+    
+    panGes = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panHandler:)];
+    [self.view addGestureRecognizer:panGes];
+    
+    pinchGes = [[UIPinchGestureRecognizer alloc] initWithTarget:self action:@selector(pinchHandler:)];
+    [self.view addGestureRecognizer:pinchGes];
     
     for (NSUInteger i = 0; i < 5; i++) {
         [self spawnLandscapeByMoveDirection:curMoveDir];
@@ -66,65 +86,79 @@
 
 - (void)dealloc
 {
+    [self.view removeGestureRecognizer:doubleTapGes];
+    [self.view removeGestureRecognizer:panGes];
+    [self.view removeGestureRecognizer:pinchGes];
     DebugMethod();
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)doubleTapHandler:(UITapGestureRecognizer *)doubleTap
 {
-    DebugMethod();
-    displayLink.paused = YES;
+    landscapeContainerView.layer.transform = CATransform3DMakeScale(1, 1, 1);
 }
 
-- (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)panHandler:(UIPanGestureRecognizer *)pan
 {
-    DebugMethod();
-    UITouch* touch = [touches anyObject];
-    CGPoint previousPos = [touch previousLocationInView:self.view];
-    CGPoint nowPos = [touch locationInView:self.view];
-    CGFloat deltaX = nowPos.x - previousPos.x;
-    CGFloat deltaY = nowPos.y - previousPos.y;
-    
-    for (LandscapeAtom* landscape in landscapes) {
-        CALayer* layer = landscape.landscapeLayer;
-        CGFloat speed = landscape.zIndex * 1.0 / LANDSCAPE_LAYERS_NUM * velocity;
-        CATransform3D transform = layer.transform;
-        if (deltaX > 0) {
-            transform = CATransform3DTranslate(transform, speed * 0.05, 0, 0);
-        } else {
-            transform = CATransform3DTranslate(transform, -speed * 0.05, 0, 0);
-        }
+    if (pan.state == UIGestureRecognizerStateBegan) {
+        displayLink.paused = YES;
+    } else if (pan.state == UIGestureRecognizerStateChanged) {
+        CGPoint traslation = [pan translationInView:self.view];
+        CGFloat deltaX = traslation.x;
+        CGFloat deltaY = traslation.y;
         
-        if (deltaY > 0) {
-            transform = CATransform3DTranslate(transform, 0, speed * 0.01, 0);
-        } else {
-            transform = CATransform3DTranslate(transform, 0, -speed * 0.01, 0);
+        for (LandscapeAtom* landscape in landscapes) {
+            CALayer* layer = landscape.landscapeLayer;
+            CGFloat speed = landscape.zIndex * 1.0 / LANDSCAPE_LAYERS_NUM * LANDSCAPE_VELOCITY_MANUALLY;
+            CATransform3D transform = layer.transform;
+            transform = CATransform3DTranslate(transform, speed * deltaX * 0.005, speed * deltaY * 0.001, 0);
+            layer.transform = transform;
         }
-        layer.transform = transform;
+    } else if (pan.state == UIGestureRecognizerStateEnded) {
+        displayLink.paused = NO;
+    } else if (pan.state == UIGestureRecognizerStateCancelled) {
+        displayLink.paused = NO;
     }
 }
 
-- (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
+- (void)pinchHandler:(UIPinchGestureRecognizer *)pinch
 {
-    DebugMethod();
-    displayLink.paused = NO;
-}
-
-- (void)touchesCancelled:(NSSet *)touches withEvent:(UIEvent *)event
-{
-    DebugMethod();
-    displayLink.paused = YES;
+    if (pinch.state == UIGestureRecognizerStateBegan) {
+        displayLink.paused = YES;
+        pinchLastScale = 1.0;
+        pinchLastPoint = [pinch locationInView:self.view];
+    } else if([pinch state] == UIGestureRecognizerStateEnded) {
+        displayLink.paused = NO;
+    } else if (pinch.state == UIGestureRecognizerStateChanged) {
+        displayLink.paused = YES;
+        
+        CATransform3D transform = landscapeContainerView.layer.transform;
+        CGFloat scale = 1.0 + (pinch.scale - pinchLastScale);
+        transform = CATransform3DScale(transform, scale, scale, 1);
+        pinchLastScale = pinch.scale;
+        
+        CGPoint point = [pinch locationInView:landscapeContainerView];
+        transform = CATransform3DTranslate(transform, point.x - pinchLastPoint.x, point.y - pinchLastPoint.y, 0);
+        pinchLastPoint = point;
+        
+        landscapeContainerView.layer.transform = transform;
+    } else if (pinch.state == UIGestureRecognizerStateCancelled) {
+        displayLink.paused = NO;
+    }
 }
 
 - (void)initData
 {
-    perlinNoise = [[PerlinNoise alloc] initWithSeed:25];
+    perlinNoise = [[PerlinNoise alloc] initWithSeed:30];
     spawner = [[LandscapeSpawner alloc] init];
     landscapes = [NSMutableArray array];
     landscapeToBeDeleted = [NSMutableArray array];
     landscapeLayers = [NSMutableArray arrayWithCapacity:LANDSCAPE_LAYERS_NUM];
+    
+    landscapeContainerView = [[UIView alloc] initWithFrame:self.view.bounds];
+    [self.view addSubview:landscapeContainerView];
     for (NSUInteger i = 0; i < LANDSCAPE_LAYERS_NUM; i++) {
         CALayer* layer = [CALayer layer];
-        [self.view.layer addSublayer:layer];
+        [landscapeContainerView.layer addSublayer:layer];
         [KungFuHelper debugLayer:layer enabled:YES];
         
         CATransform3D transform = CATransform3DIdentity;
@@ -133,8 +167,6 @@
 
         [landscapeLayers addObject:layer];
     }
-    
-    velocity = 150.0;
 }
 
 - (void)addFpsLabel
@@ -172,7 +204,7 @@
     } else {
         for (LandscapeAtom* landscape in landscapes) {
             CALayer* layer = landscape.landscapeLayer;
-            CGFloat speed = landscape.zIndex * 1.0 / LANDSCAPE_LAYERS_NUM * velocity;
+            CGFloat speed = landscape.zIndex * 1.0 / LANDSCAPE_LAYERS_NUM * LANDSCAPE_VELOCITY_AUTO;
             CATransform3D transform = layer.transform;
             if (curMoveDir == LandscapeMoveDirectionLeft) {
                 transform = CATransform3DTranslate(transform, -speed * timer.duration, 0, 0);
@@ -226,22 +258,32 @@
     LandscapeMoveDirection dir = LandscapeMoveDirectionLeft;
     
     float noise = [perlinNoise perlin1DValueForPoint:CACurrentMediaTime()];
-    NSLog(@"noise =============== %f", noise);
+    NSLog(@"Noise =============== %f", noise);
     if (noise < 0.45) {
         dir = LandscapeMoveDirectionLeft;
-        NSLog(@"========== move left ");
+        NSLog(@"◀︎ ◀︎ ◀︎ ◀︎ ◀︎ ◀︎");
     } else if (noise < 0.8) {
         dir = LandscapeMoveDirectionRight;
-        NSLog(@"========== move right");
+        NSLog(@"▶︎ ▶︎ ▶︎ ▶︎ ▶︎ ▶︎");
     } else if (noise < 0.9) {
         dir = LandscapeMoveDirectionOutScreen;
-        NSLog(@"========== out screen");
+        NSLog(@"▼ ▼ ▼ ▼ ▼ ▼");
     } else {
         dir = LandscapeMoveDirectionIntoScreen;
-        NSLog(@"========== into screen");
+        NSLog(@"▲ ▲ ▲ ▲ ▲ ▲");
     }
     float moveDuration = arc4random() % 8 + 4;
     return @[@(dir), @(moveDuration)];
+}
+
+- (void)applyBasicAnimation:(CABasicAnimation *)animation toLayer:(CALayer *)layer forKey:(NSString *)key
+{
+    animation.fromValue = [layer.presentationLayer ? : layer valueForKey:animation.keyPath];
+    [CATransaction begin];
+    [CATransaction setDisableActions:YES];
+    [layer setValue:animation.toValue forKeyPath:animation.keyPath];
+    [CATransaction commit];
+    [layer addAnimation:animation forKey:key];
 }
 
 @end
