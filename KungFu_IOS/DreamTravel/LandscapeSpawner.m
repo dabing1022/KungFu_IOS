@@ -23,7 +23,7 @@
 
 - (LandscapeAtom *)spawnByDirection:(LandscapeMoveDirection)direction
 {    
-    NSString* name = _dataSource[arc4random_uniform(_dataSource.count)];
+    NSString* name = _dataSource[arc4random_uniform((uint32_t)_dataSource.count)];
     NSUInteger zIndex = arc4random_uniform(LANDSCAPE_LAYERS_NUM);
     
     CGFloat posX;

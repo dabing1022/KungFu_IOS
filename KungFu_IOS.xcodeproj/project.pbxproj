@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		890E271E1AB3DE17006C0CCE /* SimpleCircleMoveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890E271D1AB3DE17006C0CCE /* SimpleCircleMoveViewController.m */; };
 		891E172D1A90515E009B7F9F /* ClockFace.png in Resources */ = {isa = PBXBuildFile; fileRef = 891E17251A90515E009B7F9F /* ClockFace.png */; };
 		891E172E1A90515E009B7F9F /* ClockFace@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 891E17261A90515E009B7F9F /* ClockFace@2x.png */; };
 		891E172F1A90515E009B7F9F /* HourHand.png in Resources */ = {isa = PBXBuildFile; fileRef = 891E17271A90515E009B7F9F /* HourHand.png */; };
@@ -55,6 +56,8 @@
 
 /* Begin PBXFileReference section */
 		890DF9BB1AA98407003AEEEC /* FuntionalMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuntionalMacro.h; sourceTree = "<group>"; };
+		890E271C1AB3DE17006C0CCE /* SimpleCircleMoveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCircleMoveViewController.h; sourceTree = "<group>"; };
+		890E271D1AB3DE17006C0CCE /* SimpleCircleMoveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCircleMoveViewController.m; sourceTree = "<group>"; };
 		891E17251A90515E009B7F9F /* ClockFace.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ClockFace.png; sourceTree = "<group>"; };
 		891E17261A90515E009B7F9F /* ClockFace@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "ClockFace@2x.png"; sourceTree = "<group>"; };
 		891E17271A90515E009B7F9F /* HourHand.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = HourHand.png; sourceTree = "<group>"; };
@@ -162,6 +165,8 @@
 			children = (
 				897023A71AA942F500AF5805 /* DreamTravelTestViewController.h */,
 				897023A81AA942F500AF5805 /* DreamTravelTestViewController.m */,
+				890E271C1AB3DE17006C0CCE /* SimpleCircleMoveViewController.h */,
+				890E271D1AB3DE17006C0CCE /* SimpleCircleMoveViewController.m */,
 				897023AA1AA94AC600AF5805 /* LandscapeAtom.h */,
 				897023AB1AA94AC600AF5805 /* LandscapeAtom.m */,
 				895754FF1AAC57F600D21ED3 /* LandscapeSpawner.h */,
@@ -415,6 +420,7 @@
 				891E17411AA6B035009B7F9F /* CATextLayerTestViewController.m in Sources */,
 				891E173B1A948730009B7F9F /* CAShapeLayerTestViewController.m in Sources */,
 				895755011AAC57F600D21ED3 /* LandscapeSpawner.m in Sources */,
+				890E271E1AB3DE17006C0CCE /* SimpleCircleMoveViewController.m in Sources */,
 				891E17461AA6B063009B7F9F /* PerlinNoise.m in Sources */,
 				89E6EDED1A88A7A10084F8ED /* ViewController.m in Sources */,
 				891E174A1AA6B0AC009B7F9F /* PerlinNoiseTestViewController.m in Sources */,
