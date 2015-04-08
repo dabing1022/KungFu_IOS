@@ -6,6 +6,12 @@
 	<array>
 		<dict>
 			<key>title</key>
+			<string>BlockTest</string>
+			<key>viewName</key>
+			<string>BlockTestView</string>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>SimpleCircleMoveTest</string>
 			<key>viewControllerName</key>
 			<string>SimpleCircleMoveViewController</string>

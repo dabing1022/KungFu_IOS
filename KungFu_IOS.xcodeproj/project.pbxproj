@@ -42,6 +42,7 @@
 		89E6EE131A88ABE40084F8ED /* particleTexture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89E6EE111A88ABE40084F8ED /* particleTexture@2x.png */; };
 		89E6EE141A88ABE40084F8ED /* point@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89E6EE121A88ABE40084F8ED /* point@2x.png */; };
 		89E6EE181A88AE3C0084F8ED /* CATravelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E6EE171A88AE3C0084F8ED /* CATravelView.m */; };
+		89FEE6F11AD5446200515F5A /* BlockTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FEE6F01AD5446200515F5A /* BlockTestView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,8 @@
 		89E6EE161A88AE3C0084F8ED /* CATravelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATravelView.h; sourceTree = "<group>"; };
 		89E6EE171A88AE3C0084F8ED /* CATravelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATravelView.m; sourceTree = "<group>"; };
 		89E6EE191A88AE520084F8ED /* CACONSTS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CACONSTS.h; sourceTree = "<group>"; };
+		89FEE6EF1AD5446200515F5A /* BlockTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockTestView.h; sourceTree = "<group>"; };
+		89FEE6F01AD5446200515F5A /* BlockTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockTestView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -224,6 +227,7 @@
 				897023A61AA942A400AF5805 /* DreamTravel */,
 				891E17471AA6B096009B7F9F /* PerlinNoise */,
 				89B1F51E1A90303500965B8E /* CoreAnimation */,
+				89FEE6EE1AD5443900515F5A /* BlockTest */,
 				89E6EE151A88AE0E0084F8ED /* Quartz */,
 				89E6EE0C1A88AB980084F8ED /* Dandelion */,
 				891E17421AA6B063009B7F9F /* ThirdParty */,
@@ -301,6 +305,15 @@
 				896912C71AB04D3800B0A760 /* CAWaterWaveDemoView.m */,
 			);
 			path = Quartz;
+			sourceTree = "<group>";
+		};
+		89FEE6EE1AD5443900515F5A /* BlockTest */ = {
+			isa = PBXGroup;
+			children = (
+				89FEE6EF1AD5446200515F5A /* BlockTestView.h */,
+				89FEE6F01AD5446200515F5A /* BlockTestView.m */,
+			);
+			path = BlockTest;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -419,6 +432,7 @@
 				895754F81AAC0E4600D21ED3 /* ImplicitAnimationsViewController.m in Sources */,
 				891E17411AA6B035009B7F9F /* CATextLayerTestViewController.m in Sources */,
 				891E173B1A948730009B7F9F /* CAShapeLayerTestViewController.m in Sources */,
+				89FEE6F11AD5446200515F5A /* BlockTestView.m in Sources */,
 				895755011AAC57F600D21ED3 /* LandscapeSpawner.m in Sources */,
 				890E271E1AB3DE17006C0CCE /* SimpleCircleMoveViewController.m in Sources */,
 				891E17461AA6B063009B7F9F /* PerlinNoise.m in Sources */,
