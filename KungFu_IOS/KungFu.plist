@@ -6,6 +6,24 @@
 	<array>
 		<dict>
 			<key>title</key>
+			<string>ImagePinchTest</string>
+			<key>viewControllerName</key>
+			<string>ImagePinchTestViewController</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>RuntimeDemo</string>
+			<key>viewControllerName</key>
+			<string>RuntimeDemoViewController</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>ImageResizableTest</string>
+			<key>viewControllerName</key>
+			<string>ImageResizableTestViewController</string>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>BlockTest</string>
 			<key>viewName</key>
 			<string>BlockTestView</string>
