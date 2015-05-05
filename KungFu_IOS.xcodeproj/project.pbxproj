@@ -15,6 +15,7 @@
 		8902A5C91ADBCC29004FD786 /* CATapImageView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8902A5C71ADBCC29004FD786 /* CATapImageView.m */; };
 		8902A5CC1ADBCE4F004FD786 /* DDImageScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8902A5CB1ADBCE4F004FD786 /* DDImageScrollView.m */; };
 		8902A5CE1ADBD9DB004FD786 /* angrybird.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 8902A5CD1ADBD9DB004FD786 /* angrybird.jpg */; };
+		890B53B91AEFB00E00E3E66B /* AttributeStringViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890B53B81AEFB00E00E3E66B /* AttributeStringViewController.m */; };
 		890E271E1AB3DE17006C0CCE /* SimpleCircleMoveViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 890E271D1AB3DE17006C0CCE /* SimpleCircleMoveViewController.m */; };
 		891E172D1A90515E009B7F9F /* ClockFace.png in Resources */ = {isa = PBXBuildFile; fileRef = 891E17251A90515E009B7F9F /* ClockFace.png */; };
 		891E172E1A90515E009B7F9F /* ClockFace@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 891E17261A90515E009B7F9F /* ClockFace@2x.png */; };
@@ -29,6 +30,7 @@
 		891E17411AA6B035009B7F9F /* CATextLayerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891E17401AA6B035009B7F9F /* CATextLayerTestViewController.m */; };
 		891E17461AA6B063009B7F9F /* PerlinNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 891E17451AA6B063009B7F9F /* PerlinNoise.m */; };
 		891E174A1AA6B0AC009B7F9F /* PerlinNoiseTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891E17491AA6B0AC009B7F9F /* PerlinNoiseTestViewController.m */; };
+		894784681AF7642300D50A07 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 894784671AF7642300D50A07 /* KeychainItemWrapper.m */; };
 		895754F81AAC0E4600D21ED3 /* ImplicitAnimationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 895754F71AAC0E4600D21ED3 /* ImplicitAnimationsViewController.m */; };
 		895755011AAC57F600D21ED3 /* LandscapeSpawner.m in Sources */ = {isa = PBXBuildFile; fileRef = 895755001AAC57F600D21ED3 /* LandscapeSpawner.m */; };
 		895755041AAD57D000D21ED3 /* KungFuHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 895755031AAD57D000D21ED3 /* KungFuHelper.m */; };
@@ -37,6 +39,7 @@
 		897023AC1AA94AC600AF5805 /* LandscapeAtom.m in Sources */ = {isa = PBXBuildFile; fileRef = 897023AB1AA94AC600AF5805 /* LandscapeAtom.m */; };
 		8983AABA1AD8EAA2007C362A /* ImageResizableTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8983AAB91AD8EAA2007C362A /* ImageResizableTestViewController.m */; };
 		8983AABC1AD8EBED007C362A /* bj_dropdown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8983AABB1AD8EBED007C362A /* bj_dropdown@2x.png */; };
+		8993A7C61AE9054A00C42A82 /* KungFuDateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8993A7C51AE9054A00C42A82 /* KungFuDateTest.m */; };
 		89B1F5211A9030BC00965B8E /* ContentTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B1F5201A9030BC00965B8E /* ContentTestViewController.m */; };
 		89B1F5261A90364100965B8E /* Snowman.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B1F5241A90364100965B8E /* Snowman.png */; };
 		89B1F5271A90364100965B8E /* Snowman@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B1F5251A90364100965B8E /* Snowman@2x.png */; };
@@ -81,6 +84,8 @@
 		8902A5CA1ADBCE4F004FD786 /* DDImageScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DDImageScrollView.h; sourceTree = "<group>"; };
 		8902A5CB1ADBCE4F004FD786 /* DDImageScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DDImageScrollView.m; sourceTree = "<group>"; };
 		8902A5CD1ADBD9DB004FD786 /* angrybird.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = angrybird.jpg; sourceTree = "<group>"; };
+		890B53B71AEFB00E00E3E66B /* AttributeStringViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AttributeStringViewController.h; sourceTree = "<group>"; };
+		890B53B81AEFB00E00E3E66B /* AttributeStringViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AttributeStringViewController.m; sourceTree = "<group>"; };
 		890DF9BB1AA98407003AEEEC /* FuntionalMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FuntionalMacro.h; sourceTree = "<group>"; };
 		890E271C1AB3DE17006C0CCE /* SimpleCircleMoveViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleCircleMoveViewController.h; sourceTree = "<group>"; };
 		890E271D1AB3DE17006C0CCE /* SimpleCircleMoveViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleCircleMoveViewController.m; sourceTree = "<group>"; };
@@ -103,6 +108,8 @@
 		891E17451AA6B063009B7F9F /* PerlinNoise.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerlinNoise.m; sourceTree = "<group>"; };
 		891E17481AA6B0AC009B7F9F /* PerlinNoiseTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PerlinNoiseTestViewController.h; sourceTree = "<group>"; };
 		891E17491AA6B0AC009B7F9F /* PerlinNoiseTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerlinNoiseTestViewController.m; sourceTree = "<group>"; };
+		894784661AF7642300D50A07 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
+		894784671AF7642300D50A07 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
 		895754F61AAC0E4600D21ED3 /* ImplicitAnimationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImplicitAnimationsViewController.h; sourceTree = "<group>"; };
 		895754F71AAC0E4600D21ED3 /* ImplicitAnimationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImplicitAnimationsViewController.m; sourceTree = "<group>"; };
 		895754FF1AAC57F600D21ED3 /* LandscapeSpawner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapeSpawner.h; sourceTree = "<group>"; };
@@ -118,6 +125,7 @@
 		8983AAB81AD8EAA2007C362A /* ImageResizableTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageResizableTestViewController.h; sourceTree = "<group>"; };
 		8983AAB91AD8EAA2007C362A /* ImageResizableTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageResizableTestViewController.m; sourceTree = "<group>"; };
 		8983AABB1AD8EBED007C362A /* bj_dropdown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bj_dropdown@2x.png"; sourceTree = "<group>"; };
+		8993A7C51AE9054A00C42A82 /* KungFuDateTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KungFuDateTest.m; sourceTree = "<group>"; };
 		89B1F51F1A9030BC00965B8E /* ContentTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentTestViewController.h; sourceTree = "<group>"; };
 		89B1F5201A9030BC00965B8E /* ContentTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentTestViewController.m; sourceTree = "<group>"; };
 		89B1F5241A90364100965B8E /* Snowman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snowman.png; sourceTree = "<group>"; };
@@ -193,9 +201,19 @@
 			path = ImagePinchTest;
 			sourceTree = "<group>";
 		};
+		890B53B61AEFAFF000E3E66B /* AttributeStringTest */ = {
+			isa = PBXGroup;
+			children = (
+				890B53B71AEFB00E00E3E66B /* AttributeStringViewController.h */,
+				890B53B81AEFB00E00E3E66B /* AttributeStringViewController.m */,
+			);
+			path = AttributeStringTest;
+			sourceTree = "<group>";
+		};
 		891E17421AA6B063009B7F9F /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				894784651AF7642300D50A07 /* KeychainItemWrapper */,
 				891E17431AA6B063009B7F9F /* PerlinNoise */,
 			);
 			path = ThirdParty;
@@ -217,6 +235,15 @@
 				891E17491AA6B0AC009B7F9F /* PerlinNoiseTestViewController.m */,
 			);
 			path = PerlinNoise;
+			sourceTree = "<group>";
+		};
+		894784651AF7642300D50A07 /* KeychainItemWrapper */ = {
+			isa = PBXGroup;
+			children = (
+				894784661AF7642300D50A07 /* KeychainItemWrapper.h */,
+				894784671AF7642300D50A07 /* KeychainItemWrapper.m */,
+			);
+			path = KeychainItemWrapper;
 			sourceTree = "<group>";
 		};
 		897023A61AA942A400AF5805 /* DreamTravel */ = {
@@ -289,6 +316,7 @@
 				89E6EDEC1A88A7A10084F8ED /* ViewController.m */,
 				895755021AAD57D000D21ED3 /* KungFuHelper.h */,
 				895755031AAD57D000D21ED3 /* KungFuHelper.m */,
+				890B53B61AEFAFF000E3E66B /* AttributeStringTest */,
 				897023A61AA942A400AF5805 /* DreamTravel */,
 				891E17471AA6B096009B7F9F /* PerlinNoise */,
 				89B1F51E1A90303500965B8E /* CoreAnimation */,
@@ -323,6 +351,7 @@
 			isa = PBXGroup;
 			children = (
 				89E6EE001A88A7A10084F8ED /* KungFu_IOSTests.m */,
+				8993A7C51AE9054A00C42A82 /* KungFuDateTest.m */,
 				89E6EDFE1A88A7A10084F8ED /* Supporting Files */,
 			);
 			path = KungFu_IOSTests;
@@ -430,7 +459,7 @@
 		89E6EDD91A88A7A00084F8ED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0610;
+				LastUpgradeCheck = 0630;
 				ORGANIZATIONNAME = ChildhoodAndy;
 				TargetAttributes = {
 					89E6EDE01A88A7A10084F8ED = {
@@ -502,6 +531,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				895754F81AAC0E4600D21ED3 /* ImplicitAnimationsViewController.m in Sources */,
+				894784681AF7642300D50A07 /* KeychainItemWrapper.m in Sources */,
 				8902A5BC1ADA5241004FD786 /* NSArray+Swizzle.m in Sources */,
 				8902A5C01ADBBE26004FD786 /* ImagePinchTestViewController.m in Sources */,
 				891E17411AA6B035009B7F9F /* CATextLayerTestViewController.m in Sources */,
@@ -521,6 +551,7 @@
 				8983AABA1AD8EAA2007C362A /* ImageResizableTestViewController.m in Sources */,
 				89B1F5211A9030BC00965B8E /* ContentTestViewController.m in Sources */,
 				89E6EDEA1A88A7A10084F8ED /* AppDelegate.m in Sources */,
+				890B53B91AEFB00E00E3E66B /* AttributeStringViewController.m in Sources */,
 				8902A5C91ADBCC29004FD786 /* CATapImageView.m in Sources */,
 				897023A91AA942F500AF5805 /* DreamTravelTestViewController.m in Sources */,
 				891E17371A9051B5009B7F9F /* SimpleClockViewController.m in Sources */,
@@ -536,6 +567,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				89E6EE011A88A7A10084F8ED /* KungFu_IOSTests.m in Sources */,
+				8993A7C61AE9054A00C42A82 /* KungFuDateTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -655,6 +687,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -664,6 +697,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b1345b31-89a2-4fa3-9e2d-ee0a0c413eb4";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -671,6 +705,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = KungFu_IOS/KungFu_IOS.pch;
@@ -679,6 +714,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "b1345b31-89a2-4fa3-9e2d-ee0a0c413eb4";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
