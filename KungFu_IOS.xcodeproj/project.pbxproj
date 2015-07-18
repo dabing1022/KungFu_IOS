@@ -35,6 +35,7 @@
 		8949005F1B5A28E600D953FA /* glass.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8949005E1B5A28E600D953FA /* glass.wav */; };
 		894900621B5A2B7000D953FA /* ShakeResponderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 894900611B5A2B7000D953FA /* ShakeResponderView.m */; };
 		894900651B5A320600D953FA /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 894900641B5A320600D953FA /* CardView.m */; };
+		894900681B5A4B2300D953FA /* UIView+Shake.m in Sources */ = {isa = PBXBuildFile; fileRef = 894900671B5A4B2300D953FA /* UIView+Shake.m */; };
 		895754F81AAC0E4600D21ED3 /* ImplicitAnimationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 895754F71AAC0E4600D21ED3 /* ImplicitAnimationsViewController.m */; };
 		895755011AAC57F600D21ED3 /* LandscapeSpawner.m in Sources */ = {isa = PBXBuildFile; fileRef = 895755001AAC57F600D21ED3 /* LandscapeSpawner.m */; };
 		895755041AAD57D000D21ED3 /* KungFuHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 895755031AAD57D000D21ED3 /* KungFuHelper.m */; };
@@ -121,6 +122,8 @@
 		894900611B5A2B7000D953FA /* ShakeResponderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShakeResponderView.m; sourceTree = "<group>"; };
 		894900631B5A320600D953FA /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
 		894900641B5A320600D953FA /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
+		894900661B5A4B2300D953FA /* UIView+Shake.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Shake.h"; sourceTree = "<group>"; };
+		894900671B5A4B2300D953FA /* UIView+Shake.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Shake.m"; sourceTree = "<group>"; };
 		895754F61AAC0E4600D21ED3 /* ImplicitAnimationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImplicitAnimationsViewController.h; sourceTree = "<group>"; };
 		895754F71AAC0E4600D21ED3 /* ImplicitAnimationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImplicitAnimationsViewController.m; sourceTree = "<group>"; };
 		895754FF1AAC57F600D21ED3 /* LandscapeSpawner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapeSpawner.h; sourceTree = "<group>"; };
@@ -260,6 +263,8 @@
 		8949005A1B59F2BF00D953FA /* ShakeTest */ = {
 			isa = PBXGroup;
 			children = (
+				894900661B5A4B2300D953FA /* UIView+Shake.h */,
+				894900671B5A4B2300D953FA /* UIView+Shake.m */,
 				8949005B1B59F30200D953FA /* ShakeTestViewController.h */,
 				8949005C1B59F30200D953FA /* ShakeTestViewController.m */,
 				894900601B5A2B7000D953FA /* ShakeResponderView.h */,
@@ -581,6 +586,7 @@
 				89E6EDEA1A88A7A10084F8ED /* AppDelegate.m in Sources */,
 				890B53B91AEFB00E00E3E66B /* AttributeStringViewController.m in Sources */,
 				8902A5C91ADBCC29004FD786 /* CATapImageView.m in Sources */,
+				894900681B5A4B2300D953FA /* UIView+Shake.m in Sources */,
 				897023A91AA942F500AF5805 /* DreamTravelTestViewController.m in Sources */,
 				891E17371A9051B5009B7F9F /* SimpleClockViewController.m in Sources */,
 				894900651B5A320600D953FA /* CardView.m in Sources */,

@@ -10,10 +10,12 @@
 #import <AVFoundation/AVFoundation.h>
 #import "AudioToolbox/AudioToolbox.h"
 #import "CardView.h"
+#import "UIView+Shake.h"
 
 @interface ShakeResponderView () {
     SystemSoundID soundID;
     CardView *cardView;
+    UILabel *shakeLabel;
 }
 
 @end
@@ -29,6 +31,13 @@
         
         NSString *path = [[NSBundle mainBundle] pathForResource:@"glass" ofType:@"wav"];
         AudioServicesCreateSystemSoundID((__bridge CFURLRef)[NSURL fileURLWithPath:path], &soundID);
+        
+        shakeLabel = [[UILabel alloc] initWithFrame:self.bounds];
+        [self addSubview:shakeLabel];
+        shakeLabel.font = [UIFont systemFontOfSize:30];
+        shakeLabel.textAlignment = NSTextAlignmentCenter;
+        shakeLabel.text = @"Shake Label";
+        shakeLabel.backgroundColor = [UIColor whiteColor];
     }
     
     return self;
@@ -55,7 +64,7 @@
         cardView = [[CardView alloc] init];
         [cardView show];
         
-//        [self performSelector:@selector(cardViewDismissed) withObject:nil afterDelay:5];
+        [shakeLabel shakeWithDefaultTimes];
     }
 }
 

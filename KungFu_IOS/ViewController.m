@@ -27,6 +27,9 @@ static NSString* KUNG_FU_CELL_REUSE_ID = @"kung_fu_cell";
     kungfuDemos = [dataDic objectForKey:@"demos"];
     
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:KUNG_FU_CELL_REUSE_ID];
+    
+    self.view.layer.cornerRadius = 8;
+    self.view.layer.masksToBounds = YES;
 }
 
 #pragma mark - UITableViewDelegate
