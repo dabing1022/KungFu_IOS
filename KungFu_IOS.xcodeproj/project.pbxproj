@@ -30,7 +30,11 @@
 		891E17411AA6B035009B7F9F /* CATextLayerTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891E17401AA6B035009B7F9F /* CATextLayerTestViewController.m */; };
 		891E17461AA6B063009B7F9F /* PerlinNoise.m in Sources */ = {isa = PBXBuildFile; fileRef = 891E17451AA6B063009B7F9F /* PerlinNoise.m */; };
 		891E174A1AA6B0AC009B7F9F /* PerlinNoiseTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 891E17491AA6B0AC009B7F9F /* PerlinNoiseTestViewController.m */; };
-		894784681AF7642300D50A07 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 894784671AF7642300D50A07 /* KeychainItemWrapper.m */; };
+		894784681AF7642300D50A07 /* KeychainItemWrapper.m in Sources */ = {isa = PBXBuildFile; fileRef = 894784671AF7642300D50A07 /* KeychainItemWrapper.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
+		8949005D1B59F30200D953FA /* ShakeTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8949005C1B59F30200D953FA /* ShakeTestViewController.m */; };
+		8949005F1B5A28E600D953FA /* glass.wav in Resources */ = {isa = PBXBuildFile; fileRef = 8949005E1B5A28E600D953FA /* glass.wav */; };
+		894900621B5A2B7000D953FA /* ShakeResponderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 894900611B5A2B7000D953FA /* ShakeResponderView.m */; };
+		894900651B5A320600D953FA /* CardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 894900641B5A320600D953FA /* CardView.m */; };
 		895754F81AAC0E4600D21ED3 /* ImplicitAnimationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 895754F71AAC0E4600D21ED3 /* ImplicitAnimationsViewController.m */; };
 		895755011AAC57F600D21ED3 /* LandscapeSpawner.m in Sources */ = {isa = PBXBuildFile; fileRef = 895755001AAC57F600D21ED3 /* LandscapeSpawner.m */; };
 		895755041AAD57D000D21ED3 /* KungFuHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 895755031AAD57D000D21ED3 /* KungFuHelper.m */; };
@@ -110,6 +114,13 @@
 		891E17491AA6B0AC009B7F9F /* PerlinNoiseTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PerlinNoiseTestViewController.m; sourceTree = "<group>"; };
 		894784661AF7642300D50A07 /* KeychainItemWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KeychainItemWrapper.h; sourceTree = "<group>"; };
 		894784671AF7642300D50A07 /* KeychainItemWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KeychainItemWrapper.m; sourceTree = "<group>"; };
+		8949005B1B59F30200D953FA /* ShakeTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShakeTestViewController.h; sourceTree = "<group>"; };
+		8949005C1B59F30200D953FA /* ShakeTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShakeTestViewController.m; sourceTree = "<group>"; };
+		8949005E1B5A28E600D953FA /* glass.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = glass.wav; sourceTree = "<group>"; };
+		894900601B5A2B7000D953FA /* ShakeResponderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ShakeResponderView.h; sourceTree = "<group>"; };
+		894900611B5A2B7000D953FA /* ShakeResponderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ShakeResponderView.m; sourceTree = "<group>"; };
+		894900631B5A320600D953FA /* CardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardView.h; sourceTree = "<group>"; };
+		894900641B5A320600D953FA /* CardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardView.m; sourceTree = "<group>"; };
 		895754F61AAC0E4600D21ED3 /* ImplicitAnimationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImplicitAnimationsViewController.h; sourceTree = "<group>"; };
 		895754F71AAC0E4600D21ED3 /* ImplicitAnimationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImplicitAnimationsViewController.m; sourceTree = "<group>"; };
 		895754FF1AAC57F600D21ED3 /* LandscapeSpawner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LandscapeSpawner.h; sourceTree = "<group>"; };
@@ -246,6 +257,20 @@
 			path = KeychainItemWrapper;
 			sourceTree = "<group>";
 		};
+		8949005A1B59F2BF00D953FA /* ShakeTest */ = {
+			isa = PBXGroup;
+			children = (
+				8949005B1B59F30200D953FA /* ShakeTestViewController.h */,
+				8949005C1B59F30200D953FA /* ShakeTestViewController.m */,
+				894900601B5A2B7000D953FA /* ShakeResponderView.h */,
+				894900611B5A2B7000D953FA /* ShakeResponderView.m */,
+				8949005E1B5A28E600D953FA /* glass.wav */,
+				894900631B5A320600D953FA /* CardView.h */,
+				894900641B5A320600D953FA /* CardView.m */,
+			);
+			path = ShakeTest;
+			sourceTree = "<group>";
+		};
 		897023A61AA942A400AF5805 /* DreamTravel */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,6 +341,7 @@
 				89E6EDEC1A88A7A10084F8ED /* ViewController.m */,
 				895755021AAD57D000D21ED3 /* KungFuHelper.h */,
 				895755031AAD57D000D21ED3 /* KungFuHelper.m */,
+				8949005A1B59F2BF00D953FA /* ShakeTest */,
 				890B53B61AEFAFF000E3E66B /* AttributeStringTest */,
 				897023A61AA942A400AF5805 /* DreamTravel */,
 				891E17471AA6B096009B7F9F /* PerlinNoise */,
@@ -495,6 +521,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8949005F1B5A28E600D953FA /* glass.wav in Resources */,
 				89E6EDF01A88A7A10084F8ED /* Main.storyboard in Resources */,
 				89B1F5261A90364100965B8E /* Snowman.png in Resources */,
 				891E172E1A90515E009B7F9F /* ClockFace@2x.png in Resources */,
@@ -537,6 +564,7 @@
 				891E17411AA6B035009B7F9F /* CATextLayerTestViewController.m in Sources */,
 				891E173B1A948730009B7F9F /* CAShapeLayerTestViewController.m in Sources */,
 				8902A5C81ADBCC29004FD786 /* CAImageScrollView.m in Sources */,
+				8949005D1B59F30200D953FA /* ShakeTestViewController.m in Sources */,
 				89FEE6F11AD5446200515F5A /* BlockTestView.m in Sources */,
 				895755011AAC57F600D21ED3 /* LandscapeSpawner.m in Sources */,
 				890E271E1AB3DE17006C0CCE /* SimpleCircleMoveViewController.m in Sources */,
@@ -555,10 +583,12 @@
 				8902A5C91ADBCC29004FD786 /* CATapImageView.m in Sources */,
 				897023A91AA942F500AF5805 /* DreamTravelTestViewController.m in Sources */,
 				891E17371A9051B5009B7F9F /* SimpleClockViewController.m in Sources */,
+				894900651B5A320600D953FA /* CardView.m in Sources */,
 				89E6EE181A88AE3C0084F8ED /* CATravelView.m in Sources */,
 				89E6EDE71A88A7A10084F8ED /* main.m in Sources */,
 				896912C81AB04D3800B0A760 /* CAWaterWaveDemoView.m in Sources */,
 				8902A5CC1ADBCE4F004FD786 /* DDImageScrollView.m in Sources */,
+				894900621B5A2B7000D953FA /* ShakeResponderView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

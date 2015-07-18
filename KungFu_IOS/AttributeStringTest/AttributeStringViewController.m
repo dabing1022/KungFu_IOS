@@ -42,6 +42,15 @@
     
     NSString *platform = [self getPlatform];
     NSLog(@"platform: %@", platform);
+    
+    
+    NSString *test = @"12345678";
+    test = [test substringToIndex:5];
+    NSLog(@"test %@", test);
+    
+    NSString *test2 = @"123";
+    test2 = [test2 substringToIndex:2];
+    NSLog(@"test2 %@", test2);
 }
 
 

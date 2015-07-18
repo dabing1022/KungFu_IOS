@@ -6,6 +6,12 @@
 	<array>
 		<dict>
 			<key>title</key>
+			<string>摇一摇测试</string>
+			<key>viewControllerName</key>
+			<string>ShakeTestViewController</string>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>富文本测试</string>
 			<key>viewControllerName</key>
 			<string>AttributeStringViewController</string>
