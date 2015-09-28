@@ -61,6 +61,7 @@
 		89E6EE141A88ABE40084F8ED /* point@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89E6EE121A88ABE40084F8ED /* point@2x.png */; };
 		89E6EE181A88AE3C0084F8ED /* CATravelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E6EE171A88AE3C0084F8ED /* CATravelView.m */; };
 		89FEE6F11AD5446200515F5A /* BlockTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FEE6F01AD5446200515F5A /* BlockTestView.m */; };
+		BD09A0701BB8E842004A63E2 /* UIImageViewFlipTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD09A06F1BB8E842004A63E2 /* UIImageViewFlipTestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -167,6 +168,8 @@
 		89E6EE191A88AE520084F8ED /* CACONSTS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CACONSTS.h; sourceTree = "<group>"; };
 		89FEE6EF1AD5446200515F5A /* BlockTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockTestView.h; sourceTree = "<group>"; };
 		89FEE6F01AD5446200515F5A /* BlockTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockTestView.m; sourceTree = "<group>"; };
+		BD09A06E1BB8E842004A63E2 /* UIImageViewFlipTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewFlipTestViewController.h; sourceTree = "<group>"; };
+		BD09A06F1BB8E842004A63E2 /* UIImageViewFlipTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageViewFlipTestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -346,6 +349,7 @@
 				89E6EDEC1A88A7A10084F8ED /* ViewController.m */,
 				895755021AAD57D000D21ED3 /* KungFuHelper.h */,
 				895755031AAD57D000D21ED3 /* KungFuHelper.m */,
+				BD09A06D1BB8E82D004A63E2 /* UIImageViewFlipTest */,
 				8949005A1B59F2BF00D953FA /* ShakeTest */,
 				890B53B61AEFAFF000E3E66B /* AttributeStringTest */,
 				897023A61AA942A400AF5805 /* DreamTravel */,
@@ -446,6 +450,15 @@
 			path = BlockTest;
 			sourceTree = "<group>";
 		};
+		BD09A06D1BB8E82D004A63E2 /* UIImageViewFlipTest */ = {
+			isa = PBXGroup;
+			children = (
+				BD09A06E1BB8E842004A63E2 /* UIImageViewFlipTestViewController.h */,
+				BD09A06F1BB8E842004A63E2 /* UIImageViewFlipTestViewController.m */,
+			);
+			path = UIImageViewFlipTest;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -490,7 +503,7 @@
 		89E6EDD91A88A7A00084F8ED /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = ChildhoodAndy;
 				TargetAttributes = {
 					89E6EDE01A88A7A10084F8ED = {
@@ -572,6 +585,7 @@
 				8949005D1B59F30200D953FA /* ShakeTestViewController.m in Sources */,
 				89FEE6F11AD5446200515F5A /* BlockTestView.m in Sources */,
 				895755011AAC57F600D21ED3 /* LandscapeSpawner.m in Sources */,
+				BD09A0701BB8E842004A63E2 /* UIImageViewFlipTestViewController.m in Sources */,
 				890E271E1AB3DE17006C0CCE /* SimpleCircleMoveViewController.m in Sources */,
 				891E17461AA6B063009B7F9F /* PerlinNoise.m in Sources */,
 				89E6EDED1A88A7A10084F8ED /* ViewController.m in Sources */,
@@ -658,6 +672,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -724,15 +739,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = KungFu_IOS/KungFu_IOS.pch;
 				INFOPLIST_FILE = KungFu_IOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sketch.KungFu-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b1345b31-89a2-4fa3-9e2d-ee0a0c413eb4";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -742,14 +758,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
-				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = KungFu_IOS/KungFu_IOS.pch;
 				INFOPLIST_FILE = KungFu_IOS/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.sketch.KungFu-IOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "b1345b31-89a2-4fa3-9e2d-ee0a0c413eb4";
+				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
@@ -768,6 +786,7 @@
 				);
 				INFOPLIST_FILE = KungFu_IOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.qioji.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4747aa76-c67e-4250-9a17-1b41655a589d";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KungFu_IOS.app/KungFu_IOS";
@@ -784,6 +803,7 @@
 				);
 				INFOPLIST_FILE = KungFu_IOSTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.qioji.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "4747aa76-c67e-4250-9a17-1b41655a589d";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KungFu_IOS.app/KungFu_IOS";
