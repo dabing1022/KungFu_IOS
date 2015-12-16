@@ -6,6 +6,12 @@
 	<array>
 		<dict>
 			<key>title</key>
+			<string>GCD</string>
+			<key>viewControllerName</key>
+			<string>GCDTestViewController</string>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>图片翻转测试</string>
 			<key>viewControllerName</key>
 			<string>UIImageViewFlipTestViewController</string>

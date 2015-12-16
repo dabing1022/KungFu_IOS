@@ -62,6 +62,8 @@
 		89E6EE181A88AE3C0084F8ED /* CATravelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E6EE171A88AE3C0084F8ED /* CATravelView.m */; };
 		89FEE6F11AD5446200515F5A /* BlockTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FEE6F01AD5446200515F5A /* BlockTestView.m */; };
 		BD09A0701BB8E842004A63E2 /* UIImageViewFlipTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD09A06F1BB8E842004A63E2 /* UIImageViewFlipTestViewController.m */; };
+		BD5A9A6F1BF58C5F00079C63 /* MessageReplaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5A9A6E1BF58C5F00079C63 /* MessageReplaceTests.m */; };
+		BD9BEBAA1BEB468400EA6A04 /* GCDTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9BEBA91BEB468400EA6A04 /* GCDTestViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -170,6 +172,9 @@
 		89FEE6F01AD5446200515F5A /* BlockTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockTestView.m; sourceTree = "<group>"; };
 		BD09A06E1BB8E842004A63E2 /* UIImageViewFlipTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewFlipTestViewController.h; sourceTree = "<group>"; };
 		BD09A06F1BB8E842004A63E2 /* UIImageViewFlipTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageViewFlipTestViewController.m; sourceTree = "<group>"; };
+		BD5A9A6E1BF58C5F00079C63 /* MessageReplaceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageReplaceTests.m; sourceTree = "<group>"; };
+		BD9BEBA81BEB468400EA6A04 /* GCDTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDTestViewController.h; sourceTree = "<group>"; };
+		BD9BEBA91BEB468400EA6A04 /* GCDTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDTestViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -349,6 +354,7 @@
 				89E6EDEC1A88A7A10084F8ED /* ViewController.m */,
 				895755021AAD57D000D21ED3 /* KungFuHelper.h */,
 				895755031AAD57D000D21ED3 /* KungFuHelper.m */,
+				BD9BEBA71BEB463800EA6A04 /* GCD_Test */,
 				BD09A06D1BB8E82D004A63E2 /* UIImageViewFlipTest */,
 				8949005A1B59F2BF00D953FA /* ShakeTest */,
 				890B53B61AEFAFF000E3E66B /* AttributeStringTest */,
@@ -388,6 +394,7 @@
 				89E6EE001A88A7A10084F8ED /* KungFu_IOSTests.m */,
 				8993A7C51AE9054A00C42A82 /* KungFuDateTest.m */,
 				89E6EDFE1A88A7A10084F8ED /* Supporting Files */,
+				BD5A9A6E1BF58C5F00079C63 /* MessageReplaceTests.m */,
 			);
 			path = KungFu_IOSTests;
 			sourceTree = "<group>";
@@ -457,6 +464,15 @@
 				BD09A06F1BB8E842004A63E2 /* UIImageViewFlipTestViewController.m */,
 			);
 			path = UIImageViewFlipTest;
+			sourceTree = "<group>";
+		};
+		BD9BEBA71BEB463800EA6A04 /* GCD_Test */ = {
+			isa = PBXGroup;
+			children = (
+				BD9BEBA81BEB468400EA6A04 /* GCDTestViewController.h */,
+				BD9BEBA91BEB468400EA6A04 /* GCDTestViewController.m */,
+			);
+			path = GCD_Test;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -606,6 +622,7 @@
 				894900651B5A320600D953FA /* CardView.m in Sources */,
 				89E6EE181A88AE3C0084F8ED /* CATravelView.m in Sources */,
 				89E6EDE71A88A7A10084F8ED /* main.m in Sources */,
+				BD9BEBAA1BEB468400EA6A04 /* GCDTestViewController.m in Sources */,
 				896912C81AB04D3800B0A760 /* CAWaterWaveDemoView.m in Sources */,
 				8902A5CC1ADBCE4F004FD786 /* DDImageScrollView.m in Sources */,
 				894900621B5A2B7000D953FA /* ShakeResponderView.m in Sources */,
@@ -616,6 +633,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BD5A9A6F1BF58C5F00079C63 /* MessageReplaceTests.m in Sources */,
 				89E6EE011A88A7A10084F8ED /* KungFu_IOSTests.m in Sources */,
 				8993A7C61AE9054A00C42A82 /* KungFuDateTest.m in Sources */,
 			);
