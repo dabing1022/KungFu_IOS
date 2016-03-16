@@ -8,6 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
-@interface BlockTestView : UIView
+@interface NSTimer (Block)
+
++ (NSTimer *)dd_scheduledTimerWithTimeInterval:(NSTimeInterval)inTimeInterval block:(void (^)())inBlock repeats:(BOOL)inRepeats;
+
++ (NSTimer *)dd_timerWithTimeInterval:(NSTimeInterval)inTimeInterval block:(void (^)())inBlock repeats:(BOOL)inRepeats;
+
+@end
+
+@interface BlockTestView : UIView {
+    NSTimer *_timer;
+    NSTimeInterval _timeInterval;
+    NSInteger _times;
+}
 
 @end
