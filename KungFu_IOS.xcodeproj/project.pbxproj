@@ -45,6 +45,7 @@
 		8983AABA1AD8EAA2007C362A /* ImageResizableTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8983AAB91AD8EAA2007C362A /* ImageResizableTestViewController.m */; };
 		8983AABC1AD8EBED007C362A /* bj_dropdown@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 8983AABB1AD8EBED007C362A /* bj_dropdown@2x.png */; };
 		8993A7C61AE9054A00C42A82 /* KungFuDateTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 8993A7C51AE9054A00C42A82 /* KungFuDateTest.m */; };
+		89AE8BDA1C9EEA4C002F0A5C /* NSOperationTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89AE8BD91C9EEA4C002F0A5C /* NSOperationTestViewController.m */; };
 		89B1F5211A9030BC00965B8E /* ContentTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B1F5201A9030BC00965B8E /* ContentTestViewController.m */; };
 		89B1F5261A90364100965B8E /* Snowman.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B1F5241A90364100965B8E /* Snowman.png */; };
 		89B1F5271A90364100965B8E /* Snowman@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89B1F5251A90364100965B8E /* Snowman@2x.png */; };
@@ -143,6 +144,8 @@
 		8983AAB91AD8EAA2007C362A /* ImageResizableTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageResizableTestViewController.m; sourceTree = "<group>"; };
 		8983AABB1AD8EBED007C362A /* bj_dropdown@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "bj_dropdown@2x.png"; sourceTree = "<group>"; };
 		8993A7C51AE9054A00C42A82 /* KungFuDateTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KungFuDateTest.m; sourceTree = "<group>"; };
+		89AE8BD81C9EEA4C002F0A5C /* NSOperationTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSOperationTestViewController.h; sourceTree = "<group>"; };
+		89AE8BD91C9EEA4C002F0A5C /* NSOperationTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSOperationTestViewController.m; sourceTree = "<group>"; };
 		89B1F51F1A9030BC00965B8E /* ContentTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContentTestViewController.h; sourceTree = "<group>"; };
 		89B1F5201A9030BC00965B8E /* ContentTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ContentTestViewController.m; sourceTree = "<group>"; };
 		89B1F5241A90364100965B8E /* Snowman.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Snowman.png; sourceTree = "<group>"; };
@@ -308,6 +311,15 @@
 			path = ImageResizable;
 			sourceTree = "<group>";
 		};
+		89AE8BD71C9EEA12002F0A5C /* Operation */ = {
+			isa = PBXGroup;
+			children = (
+				89AE8BD81C9EEA4C002F0A5C /* NSOperationTestViewController.h */,
+				89AE8BD91C9EEA4C002F0A5C /* NSOperationTestViewController.m */,
+			);
+			path = Operation;
+			sourceTree = "<group>";
+		};
 		89B1F51E1A90303500965B8E /* CoreAnimation */ = {
 			isa = PBXGroup;
 			children = (
@@ -361,6 +373,7 @@
 				897023A61AA942A400AF5805 /* DreamTravel */,
 				891E17471AA6B096009B7F9F /* PerlinNoise */,
 				89B1F51E1A90303500965B8E /* CoreAnimation */,
+				89AE8BD71C9EEA12002F0A5C /* Operation */,
 				89FEE6EE1AD5443900515F5A /* BlockTest */,
 				89E6EE151A88AE0E0084F8ED /* Quartz */,
 				8983AAB71AD8EA79007C362A /* ImageResizable */,
@@ -623,6 +636,7 @@
 				894900651B5A320600D953FA /* CardView.m in Sources */,
 				89E6EE181A88AE3C0084F8ED /* CATravelView.m in Sources */,
 				89E6EDE71A88A7A10084F8ED /* main.m in Sources */,
+				89AE8BDA1C9EEA4C002F0A5C /* NSOperationTestViewController.m in Sources */,
 				BD9BEBAA1BEB468400EA6A04 /* GCDTestViewController.m in Sources */,
 				896912C81AB04D3800B0A760 /* CAWaterWaveDemoView.m in Sources */,
 				8902A5CC1ADBCE4F004FD786 /* DDImageScrollView.m in Sources */,

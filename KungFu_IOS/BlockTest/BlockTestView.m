@@ -63,9 +63,18 @@
         _timer = [NSTimer dd_scheduledTimerWithTimeInterval:_timeInterval block:^{
             [self timerUpdate];
         } repeats:YES];
+        
+        [self blockTest1];
     }
     
     return self;
+}
+
+// _NSConcreteGlobalBlock类型的block要么是空block，要么是不访问任何外部变量的block。它既不在栈中，也不在堆中，我理解为它可能在内存的全局区。
+// _NSConcreteStackBlock类型的block有闭包行为，也就是有访问外部变量，并且该block有且只有有一次执行，因为栈中的空间是可重复使用的，所以当栈中的block执行一次之后就被清除出栈了，所以无法多次使用。
+// _NSConcreteMallocBlock类型的block有闭包行为，并且该block需要被多次执行。当需要多次执行时，就会把该block从栈中复制到堆中，供以多次执行。
+- (void)blockTest1 {
+    
 }
 
 - (void)stopTimer {

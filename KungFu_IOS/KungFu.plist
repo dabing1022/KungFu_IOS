@@ -6,6 +6,12 @@
 	<array>
 		<dict>
 			<key>title</key>
+			<string>OperationTest</string>
+			<key>viewControllerName</key>
+			<string>NSOperationTestViewController</string>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>GCD</string>
 			<key>viewControllerName</key>
 			<string>GCDTestViewController</string>

@@ -58,17 +58,19 @@
 
 @implementation RuntimeDemoViewController
 
-- (void)viewDidLoad {
-    [super viewDidLoad];
-    self.view.backgroundColor = [UIColor whiteColor];
-    
-    Method ori_method = class_getClassMethod([NSArray class], @selector(lastObject));
-    Method my_method = class_getClassMethod([NSArray class], @selector(myLastObject));
++ (void)load {
+    Method ori_method = class_getInstanceMethod([NSArray class], @selector(lastObject));
+    Method my_method = class_getInstanceMethod([NSArray class], @selector(myLastObject));
     method_exchangeImplementations(ori_method, my_method);
-        
+    
     NSArray *array = @[@"0",@"1",@"2",@"3"];
     NSString *string = [array lastObject];
     NSLog(@"TEST RESULT : %@",string);
+}
+
+- (void)viewDidLoad {
+    [super viewDidLoad];
+    self.view.backgroundColor = [UIColor whiteColor];
 }
 
 @end
