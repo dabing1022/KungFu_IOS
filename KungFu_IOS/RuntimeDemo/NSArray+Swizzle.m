@@ -13,7 +13,8 @@
 - (id)myLastObject
 {
     id ret = [self myLastObject];
-    NSLog(@"********* myLastObject *********");
+    // ADD A PRINT
+//    NSLog(@"********* myLastObject *********");
     return ret;
 }
 
