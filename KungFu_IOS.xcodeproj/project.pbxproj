@@ -61,6 +61,7 @@
 		89E6EE131A88ABE40084F8ED /* particleTexture@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89E6EE111A88ABE40084F8ED /* particleTexture@2x.png */; };
 		89E6EE141A88ABE40084F8ED /* point@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 89E6EE121A88ABE40084F8ED /* point@2x.png */; };
 		89E6EE181A88AE3C0084F8ED /* CATravelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E6EE171A88AE3C0084F8ED /* CATravelView.m */; };
+		89EE15E81CD5979400044FCC /* GCDTestViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EE15E61CD5979400044FCC /* GCDTestViewController2.m */; };
 		89FEE6F11AD5446200515F5A /* BlockTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FEE6F01AD5446200515F5A /* BlockTestView.m */; };
 		BD09A0701BB8E842004A63E2 /* UIImageViewFlipTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD09A06F1BB8E842004A63E2 /* UIImageViewFlipTestViewController.m */; };
 		BD5A9A6F1BF58C5F00079C63 /* MessageReplaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5A9A6E1BF58C5F00079C63 /* MessageReplaceTests.m */; };
@@ -172,6 +173,8 @@
 		89E6EE161A88AE3C0084F8ED /* CATravelView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CATravelView.h; sourceTree = "<group>"; };
 		89E6EE171A88AE3C0084F8ED /* CATravelView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CATravelView.m; sourceTree = "<group>"; };
 		89E6EE191A88AE520084F8ED /* CACONSTS.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CACONSTS.h; sourceTree = "<group>"; };
+		89EE15E51CD5979400044FCC /* GCDTestViewController2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDTestViewController2.h; sourceTree = "<group>"; };
+		89EE15E61CD5979400044FCC /* GCDTestViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDTestViewController2.m; sourceTree = "<group>"; };
 		89FEE6EF1AD5446200515F5A /* BlockTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockTestView.h; sourceTree = "<group>"; };
 		89FEE6F01AD5446200515F5A /* BlockTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockTestView.m; sourceTree = "<group>"; };
 		BD09A06E1BB8E842004A63E2 /* UIImageViewFlipTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewFlipTestViewController.h; sourceTree = "<group>"; };
@@ -489,6 +492,8 @@
 			children = (
 				BD9BEBA81BEB468400EA6A04 /* GCDTestViewController.h */,
 				BD9BEBA91BEB468400EA6A04 /* GCDTestViewController.m */,
+				89EE15E51CD5979400044FCC /* GCDTestViewController2.h */,
+				89EE15E61CD5979400044FCC /* GCDTestViewController2.m */,
 			);
 			path = GCD_Test;
 			sourceTree = "<group>";
@@ -621,6 +626,7 @@
 				895755011AAC57F600D21ED3 /* LandscapeSpawner.m in Sources */,
 				BD09A0701BB8E842004A63E2 /* UIImageViewFlipTestViewController.m in Sources */,
 				BD8714831CB3D8660008D29C /* RuntimeMethodForwardDemoViewController.m in Sources */,
+				89EE15E81CD5979400044FCC /* GCDTestViewController2.m in Sources */,
 				890E271E1AB3DE17006C0CCE /* SimpleCircleMoveViewController.m in Sources */,
 				891E17461AA6B063009B7F9F /* PerlinNoise.m in Sources */,
 				89E6EDED1A88A7A10084F8ED /* ViewController.m in Sources */,
