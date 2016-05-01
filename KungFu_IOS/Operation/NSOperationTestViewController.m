@@ -17,10 +17,12 @@
 @implementation MyTask
 
 - (void)main {
-    @autoreleasepool {
-        NSLog(@"Task begin...%@", @(self.operationID));
-        [NSThread sleepForTimeInterval:3];
-        NSLog(@"Task end...%@", @(self.operationID));
+    if (!self.isCancelled) {
+        @autoreleasepool {
+            NSLog(@"Task begin...%@", @(self.operationID));
+            [NSThread sleepForTimeInterval:3];
+            NSLog(@"Task end...%@", @(self.operationID));
+        }
     }
 }
 
@@ -47,6 +49,7 @@
     
     MyTask *task2 = [[MyTask alloc] init];
     task2.operationID = 2;
+    [task2 addDependency:task1];
     [self.queue addOperation:task2];
 }
 
