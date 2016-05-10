@@ -6,6 +6,12 @@
 	<array>
 		<dict>
 			<key>title</key>
+			<string>UIWindowTest</string>
+			<key>viewControllerName</key>
+			<string>UIWindowDemoViewController</string>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>RuntimeMethodForward</string>
 			<key>viewControllerName</key>
 			<string>RuntimeMethodForwardDemoViewController</string>

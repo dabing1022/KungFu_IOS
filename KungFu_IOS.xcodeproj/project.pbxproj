@@ -66,6 +66,7 @@
 		BD5A9A6F1BF58C5F00079C63 /* MessageReplaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5A9A6E1BF58C5F00079C63 /* MessageReplaceTests.m */; };
 		BD8714831CB3D8660008D29C /* RuntimeMethodForwardDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8714821CB3D8660008D29C /* RuntimeMethodForwardDemoViewController.m */; };
 		BD9BEBAA1BEB468400EA6A04 /* GCDTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9BEBA91BEB468400EA6A04 /* GCDTestViewController.m */; };
+		BDFAC39B1CE1D9690091E1DD /* UIWindowDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFAC39A1CE1D9690091E1DD /* UIWindowDemoViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -181,6 +182,8 @@
 		BD8714821CB3D8660008D29C /* RuntimeMethodForwardDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RuntimeMethodForwardDemoViewController.m; sourceTree = "<group>"; };
 		BD9BEBA81BEB468400EA6A04 /* GCDTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GCDTestViewController.h; sourceTree = "<group>"; };
 		BD9BEBA91BEB468400EA6A04 /* GCDTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDTestViewController.m; sourceTree = "<group>"; };
+		BDFAC3991CE1D9690091E1DD /* UIWindowDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIWindowDemoViewController.h; sourceTree = "<group>"; };
+		BDFAC39A1CE1D9690091E1DD /* UIWindowDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIWindowDemoViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -386,6 +389,7 @@
 				89E6EE0C1A88AB980084F8ED /* Dandelion */,
 				8902A5B61ADA39CE004FD786 /* RuntimeDemo */,
 				891E17421AA6B063009B7F9F /* ThirdParty */,
+				BDFAC3981CE1D9590091E1DD /* UIWindow */,
 				89E6EDEE1A88A7A10084F8ED /* Main.storyboard */,
 				89E6EDF11A88A7A10084F8ED /* Images.xcassets */,
 				89E6EDF31A88A7A10084F8ED /* LaunchScreen.xib */,
@@ -491,6 +495,15 @@
 				BD9BEBA91BEB468400EA6A04 /* GCDTestViewController.m */,
 			);
 			path = GCD_Test;
+			sourceTree = "<group>";
+		};
+		BDFAC3981CE1D9590091E1DD /* UIWindow */ = {
+			isa = PBXGroup;
+			children = (
+				BDFAC3991CE1D9690091E1DD /* UIWindowDemoViewController.h */,
+				BDFAC39A1CE1D9690091E1DD /* UIWindowDemoViewController.m */,
+			);
+			path = UIWindow;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -636,6 +649,7 @@
 				890B53B91AEFB00E00E3E66B /* AttributeStringViewController.m in Sources */,
 				8902A5C91ADBCC29004FD786 /* CATapImageView.m in Sources */,
 				894900681B5A4B2300D953FA /* UIView+Shake.m in Sources */,
+				BDFAC39B1CE1D9690091E1DD /* UIWindowDemoViewController.m in Sources */,
 				897023A91AA942F500AF5805 /* DreamTravelTestViewController.m in Sources */,
 				891E17371A9051B5009B7F9F /* SimpleClockViewController.m in Sources */,
 				894900651B5A320600D953FA /* CardView.m in Sources */,
