@@ -21,6 +21,8 @@
     // 依次注释01、02、03、04来观察运行效果
     
     dispatch_queue_t queue = dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0);
+    dispatch_queue_t serialQueue = dispatch_queue_create("mySerialQueue", DISPATCH_QUEUE_SERIAL);
+    dispatch_queue_t concurrentQueue = dispatch_queue_create("myConcurrentQueue", DISPATCH_QUEUE_CONCURRENT);
     
     // 01
 //    for (NSInteger i = 0; i < 1000; i++) {
@@ -56,6 +58,33 @@
     });
     
     [self performSelector:@selector(logSomething:) withObject:@(YES) afterDelay:2];
+    
+    
+    dispatch_async(serialQueue, ^(void) {
+       for (int i = 0 ; i < 100; i ++)
+       {
+           NSLog(@"%@=========%d"  , [NSThread currentThread] , i);
+       }
+    });
+    dispatch_async(serialQueue, ^(void) {
+       for (int i = 0 ; i < 100; i ++)
+       {
+           NSLog(@"%@---------%d" , [NSThread currentThread] , i);
+       }
+    });
+    
+    dispatch_async(concurrentQueue, ^(void) {
+       for (int i = 0 ; i < 100; i ++)
+       {
+           NSLog(@"%@**********%d"  , [NSThread currentThread] , i);
+       }
+    });
+    dispatch_async(concurrentQueue, ^(void) {
+       for (int i = 0 ; i < 100; i ++)
+       {
+           NSLog(@"%@##########%d" , [NSThread currentThread] , i);
+       }
+    });
 }
 
 - (void)doSomethingHeavey:(id)obj {

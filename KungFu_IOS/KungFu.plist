@@ -26,6 +26,12 @@
 			<key>title</key>
 			<string>GCD</string>
 			<key>viewControllerName</key>
+			<string>GCDTestViewController2</string>
+		</dict>
+		<dict>
+			<key>title</key>
+			<string>GCD</string>
+			<key>viewControllerName</key>
 			<string>GCDTestViewController</string>
 		</dict>
 		<dict>
