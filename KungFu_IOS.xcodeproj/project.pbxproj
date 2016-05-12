@@ -63,6 +63,7 @@
 		89E6EE181A88AE3C0084F8ED /* CATravelView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89E6EE171A88AE3C0084F8ED /* CATravelView.m */; };
 		89EE15E81CD5979400044FCC /* GCDTestViewController2.m in Sources */ = {isa = PBXBuildFile; fileRef = 89EE15E61CD5979400044FCC /* GCDTestViewController2.m */; };
 		89FEE6F11AD5446200515F5A /* BlockTestView.m in Sources */ = {isa = PBXBuildFile; fileRef = 89FEE6F01AD5446200515F5A /* BlockTestView.m */; };
+		BD03FF431CE479B60066B3E9 /* InteractiveCardDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD03FF421CE479B60066B3E9 /* InteractiveCardDemoViewController.m */; };
 		BD09A0701BB8E842004A63E2 /* UIImageViewFlipTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD09A06F1BB8E842004A63E2 /* UIImageViewFlipTestViewController.m */; };
 		BD5A9A6F1BF58C5F00079C63 /* MessageReplaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BD5A9A6E1BF58C5F00079C63 /* MessageReplaceTests.m */; };
 		BD8714831CB3D8660008D29C /* RuntimeMethodForwardDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8714821CB3D8660008D29C /* RuntimeMethodForwardDemoViewController.m */; };
@@ -178,6 +179,8 @@
 		89EE15E61CD5979400044FCC /* GCDTestViewController2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDTestViewController2.m; sourceTree = "<group>"; };
 		89FEE6EF1AD5446200515F5A /* BlockTestView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockTestView.h; sourceTree = "<group>"; };
 		89FEE6F01AD5446200515F5A /* BlockTestView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockTestView.m; sourceTree = "<group>"; };
+		BD03FF411CE479B60066B3E9 /* InteractiveCardDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InteractiveCardDemoViewController.h; sourceTree = "<group>"; };
+		BD03FF421CE479B60066B3E9 /* InteractiveCardDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InteractiveCardDemoViewController.m; sourceTree = "<group>"; };
 		BD09A06E1BB8E842004A63E2 /* UIImageViewFlipTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewFlipTestViewController.h; sourceTree = "<group>"; };
 		BD09A06F1BB8E842004A63E2 /* UIImageViewFlipTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageViewFlipTestViewController.m; sourceTree = "<group>"; };
 		BD5A9A6E1BF58C5F00079C63 /* MessageReplaceTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageReplaceTests.m; sourceTree = "<group>"; };
@@ -377,6 +380,7 @@
 				89E6EDEC1A88A7A10084F8ED /* ViewController.m */,
 				895755021AAD57D000D21ED3 /* KungFuHelper.h */,
 				895755031AAD57D000D21ED3 /* KungFuHelper.m */,
+				BD03FF401CE479960066B3E9 /* Animations */,
 				BD9BEBA71BEB463800EA6A04 /* GCD_Test */,
 				BD09A06D1BB8E82D004A63E2 /* UIImageViewFlipTest */,
 				8949005A1B59F2BF00D953FA /* ShakeTest */,
@@ -480,6 +484,15 @@
 				89FEE6F01AD5446200515F5A /* BlockTestView.m */,
 			);
 			path = BlockTest;
+			sourceTree = "<group>";
+		};
+		BD03FF401CE479960066B3E9 /* Animations */ = {
+			isa = PBXGroup;
+			children = (
+				BD03FF411CE479B60066B3E9 /* InteractiveCardDemoViewController.h */,
+				BD03FF421CE479B60066B3E9 /* InteractiveCardDemoViewController.m */,
+			);
+			path = Animations;
 			sourceTree = "<group>";
 		};
 		BD09A06D1BB8E82D004A63E2 /* UIImageViewFlipTest */ = {
@@ -661,6 +674,7 @@
 				894900651B5A320600D953FA /* CardView.m in Sources */,
 				89E6EE181A88AE3C0084F8ED /* CATravelView.m in Sources */,
 				89E6EDE71A88A7A10084F8ED /* main.m in Sources */,
+				BD03FF431CE479B60066B3E9 /* InteractiveCardDemoViewController.m in Sources */,
 				89AE8BDA1C9EEA4C002F0A5C /* NSOperationTestViewController.m in Sources */,
 				BD9BEBAA1BEB468400EA6A04 /* GCDTestViewController.m in Sources */,
 				896912C81AB04D3800B0A760 /* CAWaterWaveDemoView.m in Sources */,
@@ -796,7 +810,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
@@ -815,7 +828,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
