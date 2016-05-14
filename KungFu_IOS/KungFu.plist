@@ -6,6 +6,12 @@
 	<array>
 		<dict>
 			<key>title</key>
+			<string>AppleLogo</string>
+			<key>viewControllerName</key>
+			<string>AppleLogoViewController</string>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>InteractiveCardDemoViewController</string>
 			<key>viewControllerName</key>
 			<string>InteractiveCardDemoViewController</string>

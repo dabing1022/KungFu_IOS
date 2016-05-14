@@ -20,4 +20,6 @@
 #define ARC4RANDOM_MAX      0x100000000
 #define RAND_BETWEEN_0_1    ((double)arc4random() / ARC4RANDOM_MAX)
 
+#define RANDOM_COLOR        [UIColor colorWithRed:arc4random_uniform(255) / 255.0 green:arc4random_uniform(255) / 255.0 blue:arc4random_uniform(255) / 255.0 alpha:1.0]
+
 #endif

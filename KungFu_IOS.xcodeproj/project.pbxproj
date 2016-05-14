@@ -39,6 +39,9 @@
 		895754F81AAC0E4600D21ED3 /* ImplicitAnimationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 895754F71AAC0E4600D21ED3 /* ImplicitAnimationsViewController.m */; };
 		895755011AAC57F600D21ED3 /* LandscapeSpawner.m in Sources */ = {isa = PBXBuildFile; fileRef = 895755001AAC57F600D21ED3 /* LandscapeSpawner.m */; };
 		895755041AAD57D000D21ED3 /* KungFuHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 895755031AAD57D000D21ED3 /* KungFuHelper.m */; };
+		895D18641CE61316008772EA /* BLBezierView.m in Sources */ = {isa = PBXBuildFile; fileRef = 895D18611CE61316008772EA /* BLBezierView.m */; };
+		895D18651CE61316008772EA /* PWBezier.m in Sources */ = {isa = PBXBuildFile; fileRef = 895D18631CE61316008772EA /* PWBezier.m */; };
+		895D18681CE61346008772EA /* AppleLogoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 895D18671CE61346008772EA /* AppleLogoViewController.m */; };
 		896912C81AB04D3800B0A760 /* CAWaterWaveDemoView.m in Sources */ = {isa = PBXBuildFile; fileRef = 896912C71AB04D3800B0A760 /* CAWaterWaveDemoView.m */; };
 		897023A91AA942F500AF5805 /* DreamTravelTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 897023A81AA942F500AF5805 /* DreamTravelTestViewController.m */; };
 		897023AC1AA94AC600AF5805 /* LandscapeAtom.m in Sources */ = {isa = PBXBuildFile; fileRef = 897023AB1AA94AC600AF5805 /* LandscapeAtom.m */; };
@@ -138,6 +141,12 @@
 		895755001AAC57F600D21ED3 /* LandscapeSpawner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LandscapeSpawner.m; sourceTree = "<group>"; };
 		895755021AAD57D000D21ED3 /* KungFuHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KungFuHelper.h; sourceTree = "<group>"; };
 		895755031AAD57D000D21ED3 /* KungFuHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KungFuHelper.m; sourceTree = "<group>"; };
+		895D18601CE61316008772EA /* BLBezierView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BLBezierView.h; sourceTree = "<group>"; };
+		895D18611CE61316008772EA /* BLBezierView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BLBezierView.m; sourceTree = "<group>"; };
+		895D18621CE61316008772EA /* PWBezier.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PWBezier.h; sourceTree = "<group>"; };
+		895D18631CE61316008772EA /* PWBezier.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PWBezier.m; sourceTree = "<group>"; };
+		895D18661CE61346008772EA /* AppleLogoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppleLogoViewController.h; sourceTree = "<group>"; };
+		895D18671CE61346008772EA /* AppleLogoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppleLogoViewController.m; sourceTree = "<group>"; };
 		896912C61AB04D3800B0A760 /* CAWaterWaveDemoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CAWaterWaveDemoView.h; sourceTree = "<group>"; };
 		896912C71AB04D3800B0A760 /* CAWaterWaveDemoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CAWaterWaveDemoView.m; sourceTree = "<group>"; };
 		897023A71AA942F500AF5805 /* DreamTravelTestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DreamTravelTestViewController.h; sourceTree = "<group>"; };
@@ -252,6 +261,7 @@
 		891E17421AA6B063009B7F9F /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				895D185F1CE61316008772EA /* PWBezier */,
 				894784651AF7642300D50A07 /* KeychainItemWrapper */,
 				891E17431AA6B063009B7F9F /* PerlinNoise */,
 			);
@@ -299,6 +309,17 @@
 				894900641B5A320600D953FA /* CardView.m */,
 			);
 			path = ShakeTest;
+			sourceTree = "<group>";
+		};
+		895D185F1CE61316008772EA /* PWBezier */ = {
+			isa = PBXGroup;
+			children = (
+				895D18601CE61316008772EA /* BLBezierView.h */,
+				895D18611CE61316008772EA /* BLBezierView.m */,
+				895D18621CE61316008772EA /* PWBezier.h */,
+				895D18631CE61316008772EA /* PWBezier.m */,
+			);
+			path = PWBezier;
 			sourceTree = "<group>";
 		};
 		897023A61AA942A400AF5805 /* DreamTravel */ = {
@@ -491,6 +512,8 @@
 			children = (
 				BD03FF411CE479B60066B3E9 /* InteractiveCardDemoViewController.h */,
 				BD03FF421CE479B60066B3E9 /* InteractiveCardDemoViewController.m */,
+				895D18661CE61346008772EA /* AppleLogoViewController.h */,
+				895D18671CE61346008772EA /* AppleLogoViewController.m */,
 			);
 			path = Animations;
 			sourceTree = "<group>";
@@ -573,6 +596,7 @@
 				TargetAttributes = {
 					89E6EDE01A88A7A10084F8ED = {
 						CreatedOnToolsVersion = 6.1.1;
+						DevelopmentTeam = 6RUU9PN7NF;
 					};
 					89E6EDF91A88A7A10084F8ED = {
 						CreatedOnToolsVersion = 6.1.1;
@@ -659,6 +683,7 @@
 				891E174A1AA6B0AC009B7F9F /* PerlinNoiseTestViewController.m in Sources */,
 				8902A5B91ADA39E4004FD786 /* RuntimeDemoViewController.m in Sources */,
 				8902A5C31ADBBE3E004FD786 /* RSKImageScrollView.m in Sources */,
+				895D18651CE61316008772EA /* PWBezier.m in Sources */,
 				89E6EE0F1A88ABC20084F8ED /* DandelionViewController.m in Sources */,
 				897023AC1AA94AC600AF5805 /* LandscapeAtom.m in Sources */,
 				895755041AAD57D000D21ED3 /* KungFuHelper.m in Sources */,
@@ -673,11 +698,13 @@
 				891E17371A9051B5009B7F9F /* SimpleClockViewController.m in Sources */,
 				894900651B5A320600D953FA /* CardView.m in Sources */,
 				89E6EE181A88AE3C0084F8ED /* CATravelView.m in Sources */,
+				895D18641CE61316008772EA /* BLBezierView.m in Sources */,
 				89E6EDE71A88A7A10084F8ED /* main.m in Sources */,
 				BD03FF431CE479B60066B3E9 /* InteractiveCardDemoViewController.m in Sources */,
 				89AE8BDA1C9EEA4C002F0A5C /* NSOperationTestViewController.m in Sources */,
 				BD9BEBAA1BEB468400EA6A04 /* GCDTestViewController.m in Sources */,
 				896912C81AB04D3800B0A760 /* CAWaterWaveDemoView.m in Sources */,
+				895D18681CE61346008772EA /* AppleLogoViewController.m in Sources */,
 				8902A5CC1ADBCE4F004FD786 /* DDImageScrollView.m in Sources */,
 				894900621B5A2B7000D953FA /* ShakeResponderView.m in Sources */,
 			);
