@@ -90,6 +90,12 @@
 		</dict>
 		<dict>
 			<key>title</key>
+			<string>BlockTest2</string>
+			<key>viewName</key>
+			<string>BlockTestView2</string>
+		</dict>
+		<dict>
+			<key>title</key>
 			<string>SimpleCircleMoveTest</string>
 			<key>viewControllerName</key>
 			<string>SimpleCircleMoveViewController</string>

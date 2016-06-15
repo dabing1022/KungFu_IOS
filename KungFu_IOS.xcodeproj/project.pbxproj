@@ -72,6 +72,7 @@
 		BD8714831CB3D8660008D29C /* RuntimeMethodForwardDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD8714821CB3D8660008D29C /* RuntimeMethodForwardDemoViewController.m */; };
 		BD9BEBAA1BEB468400EA6A04 /* GCDTestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BD9BEBA91BEB468400EA6A04 /* GCDTestViewController.m */; };
 		BDFAC39B1CE1D9690091E1DD /* UIWindowDemoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = BDFAC39A1CE1D9690091E1DD /* UIWindowDemoViewController.m */; };
+		D579F0E81D1164D4005A83AE /* BlockTestView2.m in Sources */ = {isa = PBXBuildFile; fileRef = D579F0E71D1164D4005A83AE /* BlockTestView2.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -199,6 +200,8 @@
 		BD9BEBA91BEB468400EA6A04 /* GCDTestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GCDTestViewController.m; sourceTree = "<group>"; };
 		BDFAC3991CE1D9690091E1DD /* UIWindowDemoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIWindowDemoViewController.h; sourceTree = "<group>"; };
 		BDFAC39A1CE1D9690091E1DD /* UIWindowDemoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIWindowDemoViewController.m; sourceTree = "<group>"; };
+		D579F0E61D1164D4005A83AE /* BlockTestView2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BlockTestView2.h; sourceTree = "<group>"; };
+		D579F0E71D1164D4005A83AE /* BlockTestView2.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BlockTestView2.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -503,6 +506,8 @@
 			children = (
 				89FEE6EF1AD5446200515F5A /* BlockTestView.h */,
 				89FEE6F01AD5446200515F5A /* BlockTestView.m */,
+				D579F0E61D1164D4005A83AE /* BlockTestView2.h */,
+				D579F0E71D1164D4005A83AE /* BlockTestView2.m */,
 			);
 			path = BlockTest;
 			sourceTree = "<group>";
@@ -687,6 +692,7 @@
 				89E6EE0F1A88ABC20084F8ED /* DandelionViewController.m in Sources */,
 				897023AC1AA94AC600AF5805 /* LandscapeAtom.m in Sources */,
 				895755041AAD57D000D21ED3 /* KungFuHelper.m in Sources */,
+				D579F0E81D1164D4005A83AE /* BlockTestView2.m in Sources */,
 				8983AABA1AD8EAA2007C362A /* ImageResizableTestViewController.m in Sources */,
 				89B1F5211A9030BC00965B8E /* ContentTestViewController.m in Sources */,
 				89E6EDEA1A88A7A10084F8ED /* AppDelegate.m in Sources */,
