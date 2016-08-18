@@ -36,13 +36,21 @@
 
         labelRect = [helloTravelLabel textRectForBounds:CGRectMake(0, 0, 100, 30) limitedToNumberOfLines:1];
         
-        timer = [NSTimer scheduledTimerWithTimeInterval:1/60 target:self selector:@selector(timerTick:) userInfo:nil repeats:YES];
-        [timer fire];
+//        timer = [NSTimer scheduledTimerWithTimeInterval:1/60 target:self selector:@selector(timerTick:) userInfo:nil repeats:YES];
+//        [timer fire];
         
         posX = 0;
     }
     
     return self;
+}
+
+- (void)willMoveToSuperview:(UIView *)newSuperview {
+    NSLog(@"---newSuperview %@", newSuperview);
+}
+
+- (void)willMoveToWindow:(UIWindow *)newWindow {
+    NSLog(@"---newWindow %@", newWindow);
 }
 
 - (void)timerTick:(NSTimer *)timerSender
